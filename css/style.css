@@ -1,0 +1,10 @@
+body {
+   /* background-image: url('../img/proposal-background.jpg');
+   background-size: cover; */
+   font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif;
+}
+
+h1, .subtitle {
+   text-align: center;
+   margin: 10px;
+}
