@@ -1,9 +1,41 @@
 body {
-   background-color: #d0d0d0;
+   background-color: tan;
    font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif;
+}
+
+/* need to get image to spread to edges of page */
+header {
+   background-image: url(../img/header-background.jpeg);
+   background-position: center;
+   background-size: cover;
+   background-color: rgb(18, 65, 18);
+   color: antiquewhite;
+   text-shadow: black 1px 1px;
+   padding: 3rem;
 }
 
 h1, .subtitle {
    text-align: center;
    margin: 10px;
+}
+
+.topnav {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   overflow: hidden;
+}
+
+.topnav a {
+   float: left;
+   color: antiquewhite;
+   text-align: center;
+   padding: 2.5rem 1rem;
+   text-decoration: none;
+   font-size: 20px;
+}
+
+/* trying to get this to the right side */
+#login {
+   float: center;
 }
