@@ -1,17 +1,18 @@
 body {
-   background-color: tan;
+   background-color: rgb(167, 166, 141);
    font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif;
+   margin: 0;
 }
 
-/* need to get image to spread to edges of page */
 header {
    background-image: url(../img/header-background.jpeg);
    background-position: center;
    background-size: cover;
-   background-color: rgb(18, 65, 18);
+   background-color: rgb(37, 89, 31);
    color: antiquewhite;
-   text-shadow: black 1px 1px;
-   padding: 3rem;
+   text-shadow: rgb(25, 39, 13) 1px 1px;
+   padding: 2.25rem;
+   margin: 0;
 }
 
 h1, .subtitle {
@@ -19,23 +20,37 @@ h1, .subtitle {
    margin: 10px;
 }
 
+footer {
+   background-color: rgb(53, 36, 12);
+   width: 100%;
+   position: fixed;
+   bottom: 0;
+   text-align: center;
+   color: antiquewhite;
+}
+
 .topnav {
    position: fixed;
    top: 0;
+   left: 0;
    width: 100%;
    overflow: hidden;
 }
 
 .topnav a {
    float: left;
+   display: block;
    color: antiquewhite;
    text-align: center;
-   padding: 2.5rem 1rem;
    text-decoration: none;
-   font-size: 20px;
+   padding: 1.5rem 2rem;
+   font-size: 1.125rem;
 }
 
-/* trying to get this to the right side */
+.topnav a.active {
+   background-color: rgb(170, 170, 170, 0.5)
+}
+
 #login {
-   float: center;
+   float: right;
 }
