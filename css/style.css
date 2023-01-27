@@ -19,6 +19,7 @@ header {
 }
 
 .title, .subtitle {
+   font-family: "Alike Angular", serif;
    text-align: center;
    margin: 0.25rem;
 }
@@ -40,7 +41,7 @@ main {
 footer {
    background-color: rgb(53, 36, 12);
    width: 100%;
-   position: sticky;
+   position: static;
    bottom: 0;
    text-align: center;
    color: antiquewhite;
@@ -80,12 +81,21 @@ footer {
    margin-right: 1rem;
 }
 
-.hike-data {
-   margin-left: auto;
-   margin-right: auto;
-   text-align: center;
+.highlight img {
+   max-width: 50%;
+   margin-top: 1rem;
 }
 
-.trail-highlight {
+.highlight p {
+   background-color: rgba(100, 100, 100, 0.5);
    max-width: 50%;
+   margin-top: 0;
+   padding-top: 0.4rem;
+   padding-bottom: 0.4rem;
+   position: relative;
+   bottom: 2.4rem;
+   color: white;
+   font-style: italic;
+   text-indent: 1rem;
+   text-shadow: rgb(25, 39, 13) 1px 1px;
 }
