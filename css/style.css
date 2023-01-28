@@ -41,12 +41,16 @@ main {
 }
 
 footer {
+   background-image: url(../img/footer-background.jpeg);
+   background-position: center;
+   background-size: cover;
    background-color: rgb(53, 36, 12);
    width: 100%;
    position: static;
    bottom: 0;
    text-align: center;
    color: antiquewhite;
+   text-shadow: rgb(25, 39, 13) 1px 1px;
    padding-top: 0.2rem;
    padding-bottom: 0.2rem;
 }
@@ -102,29 +106,33 @@ a {
 
 .trail-data {
    text-align: center;
+   align-items: center;
 }
 
 .trail-data a {
    text-decoration: none;
 }
 
-/*Cards are slightly off-center to the left, need to fix*/
-
 .trail-data .card {
+   min-width: fit-content;
    max-width: 9rem;
-   margin: 0 0.25rem 0.25rem;
+   margin: 0 0.25rem 0.5rem;
    background-color: antiquewhite;
 }
 
 .trail-data .card-title {
    margin-top: 0.5rem;
    margin-bottom: 0;
-   font-size: 1rem;
+   font-size: 0.9rem;
 }
 
 .trail-data .card-text {
    margin-bottom: 0.5rem;
    font-size: 0.75rem;
+}
+
+.hike-description {
+   text-align: justify;
 }
 
 #map {
@@ -133,6 +141,8 @@ a {
    margin-left: auto;
    margin-right: auto;
    margin-bottom: 1rem;
+   margin-top: 1rem;
+   border-radius: 0.5rem;
    width: 75%;
 }
 
