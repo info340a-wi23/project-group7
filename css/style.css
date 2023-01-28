@@ -16,10 +16,13 @@ header {
    text-shadow: rgb(25, 39, 13) 1px 1px;
    padding: 2.25rem;
    margin: 0;
+   z-index: 1;
 }
 
-.title, .subtitle {
+h1, h2, h3, h4, h5, h6, .title, .subtitle {
+   font-family: "Alike Angular", serif;
    text-align: center;
+   font-weight: bold;
    margin: 0.25rem;
 }
 
@@ -29,7 +32,7 @@ header {
 
 .subtitle {
    font-size: 1.25rem;
-   font-weight: bold;
+   margin-bottom: 1rem;
 }
 
 main {
@@ -38,12 +41,16 @@ main {
 }
 
 footer {
+   background-image: url(../img/footer-background.jpeg);
+   background-position: center;
+   background-size: cover;
    background-color: rgb(53, 36, 12);
    width: 100%;
-   position: sticky;
+   position: static;
    bottom: 0;
    text-align: center;
    color: antiquewhite;
+   text-shadow: rgb(25, 39, 13) 1px 1px;
    padding-top: 0.2rem;
    padding-bottom: 0.2rem;
 }
@@ -74,18 +81,76 @@ footer {
    float: right;
 }
 
-.img-and-data {
-   margin-top: 1rem;
-   margin-left: 3rem;
-   margin-right: 1rem;
+.highlight .card {
+   margin: 0 0.25rem 0.25rem;
 }
 
-.hike-data {
+.highlight p {
+   color: antiquewhite;
+   font-style: italic;
+   text-indent: 1rem;
+   text-shadow: rgb(25, 39, 13) 1px 1px;
+   background-color: rgba(100, 100, 100, 0.5);
+   padding-top: 0.5rem;
+   padding-bottom: 0.5rem;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   border-radius: 0 0 0.5rem 0.5rem;
+}
+
+a {
+   color: inherit;
+}
+
+.trail-data {
+   text-align: center;
+   align-items: center;
+}
+
+.trail-data a {
+   text-decoration: none;
+}
+
+.trail-data .card {
+   min-width: fit-content;
+   max-width: 9rem;
+   margin: 0 0.25rem 0.5rem;
+   background-color: antiquewhite;
+}
+
+.trail-data .card-title {
+   margin-top: 0.5rem;
+   margin-bottom: 0;
+   font-size: 0.9rem;
+}
+
+.trail-data .card-text {
+   margin-bottom: 0.5rem;
+   font-size: 0.75rem;
+}
+
+.hike-description {
+   text-align: justify;
+}
+
+#map {
+   position: static;
+   display: block;
    margin-left: auto;
    margin-right: auto;
-   text-align: center;
+   margin-bottom: 1rem;
+   margin-top: 1rem;
+   border-radius: 0.5rem;
+   width: 75%;
 }
 
-.trail-highlight {
-   max-width: 50%;
+#map-search-bar {
+   position: static;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 0.5rem;
+   margin-bottom: 0.5rem;
 }
