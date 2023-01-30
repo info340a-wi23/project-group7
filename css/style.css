@@ -38,21 +38,24 @@ h1, h2, h3, h4, h5, h6, .title, .subtitle {
 main {
    margin-left: 4rem;
    margin-right: 4rem;
+   margin-bottom: 5rem;
 }
 
 footer {
-   background-image: url(../img/footer-background.jpeg);
-   background-position: center;
+   background-image: url(../img/header-background.jpeg);
+   background-position: bottom;
    background-size: cover;
    background-color: rgb(53, 36, 12);
    width: 100%;
-   position: static;
+   position: fixed;
    bottom: 0;
+   height: 3.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
    text-align: center;
    color: antiquewhite;
    text-shadow: rgb(25, 39, 13) 1px 1px;
-   padding-top: 0.2rem;
-   padding-bottom: 0.2rem;
 }
 
 .topnav {
@@ -117,7 +120,7 @@ a {
    min-width: fit-content;
    max-width: 9rem;
    margin: 0 0.25rem 0.5rem;
-   background-color: antiquewhite;
+   background-color: white;
 }
 
 .trail-data .card-title {
@@ -133,6 +136,26 @@ a {
 
 .hike-description {
    text-align: justify;
+}
+
+.user-post .card-title {
+   text-align: left;
+   margin-top: 1rem;
+}
+
+.user-post .card-subtitle {
+   text-align: left;
+   margin-bottom: 1rem;
+}
+
+.user-post p {
+   margin-top: 1rem;
+}
+
+.user-post .img-gallery {
+   margin-bottom: 1rem;
+   max-width: 100%;
+   border-radius: 0.5rem;
 }
 
 #map {
