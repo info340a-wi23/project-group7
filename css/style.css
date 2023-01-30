@@ -86,13 +86,20 @@ footer {
    float: right;
 }
 
-.map-list .card-title, .map-list p {
+.map-list .card-title, .map-list .card-subtitle, .map-list p {
    margin-left: 1rem;
 }
 
 .map-list .card-title {
    text-align: left;
    margin-top: 1rem;
+   margin-bottom: 0;
+}
+
+.map-list .card-subtitle {
+   text-align: left;
+   margin-bottom: 0.5rem;
+   margin-top: 0.5rem;
 }
 
 .highlight .card {
@@ -187,6 +194,17 @@ a {
    margin-bottom: 1rem;
    max-width: 100%;
    border-radius: 0.5rem;
+}
+
+#profile-pic {
+   max-width: 20%;
+   display: block;
+   margin: 1rem auto;
+   border-radius: 50%;
+}
+
+#bio {
+   text-align: center;
 }
 
 #map {
