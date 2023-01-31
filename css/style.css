@@ -196,15 +196,16 @@ a {
    border-radius: 0.5rem;
 }
 
+.user-data p {
+   text-align: center;
+   margin: 0.5rem;
+}
+
 #profile-pic {
    max-width: 20%;
    display: block;
    margin: 1rem auto;
    border-radius: 50%;
-}
-
-#bio {
-   text-align: center;
 }
 
 #map {
