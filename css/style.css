@@ -263,6 +263,13 @@ a {
    background-color: inherit;
 }
 
+.home-page .slideshow .slideshow-img {
+   max-width: 50%;
+   display: flex;
+   margin: 1rem auto;
+   border-radius: 0.5rem;
+}
+
 /* Login Page */
 
 .container .login-page {
