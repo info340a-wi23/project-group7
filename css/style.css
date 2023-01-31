@@ -170,7 +170,7 @@ a {
 
 .user-post .card-subtitle {
    text-align: left;
-   margin-bottom: 1rem;
+   margin-bottom: 0.5rem;
 }
 
 .qa-block {
@@ -191,6 +191,7 @@ a {
 }
 
 .user-post .img-gallery {
+   margin-top: 1rem;
    margin-bottom: 1rem;
    max-width: 100%;
    border-radius: 0.5rem;
