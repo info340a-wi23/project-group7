@@ -60,6 +60,8 @@ footer {
    text-shadow: rgb(25, 39, 13) 1px 1px;
 }
 
+/* Navigation Bar */
+
 .topnav {
    position: fixed;
    top: 0;
@@ -86,21 +88,48 @@ footer {
    float: right;
 }
 
-.map-list .card-title, .map-list .card-subtitle, .map-list p {
-   margin-left: 1rem;
-}
+/* Home Page */
 
-.map-list .card-title {
-   text-align: left;
+.home-page .card {
+   min-width: fit-content;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 1rem;
    margin-top: 1rem;
-   margin-bottom: 0;
+   padding-bottom: 1rem;
+   border-color: black;
+} 
+
+.home-page .card-text {
+   margin-left: 1rem;
+   margin-right: 1rem;
 }
 
-.map-list .card-subtitle {
-   text-align: left;
-   margin-bottom: 0.5rem;
-   margin-top: 0.5rem;
+.home-page form {
+   margin-left: 1rem;
+   margin-right: 1rem;
 }
+
+.home-page form input {
+   background-color: inherit;
+}
+
+.home-page form textarea {
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   width: 100%;
+   height: 5rem;
+   background-color: inherit;
+}
+
+.home-page .slideshow .slideshow-img {
+   max-width: 50%;
+   display: flex;
+   margin: 1rem auto;
+   border-radius: 0.5rem;
+}
+
+/* Trail Page */
 
 .highlight .card {
    margin: 0 0.25rem 0.25rem;
@@ -209,6 +238,24 @@ a {
    border-radius: 50%;
 }
 
+/* Map Page */
+
+.map-list .card-title, .map-list .card-subtitle, .map-list p {
+   margin-left: 1rem;
+}
+
+.map-list .card-title {
+   text-align: left;
+   margin-top: 1rem;
+   margin-bottom: 0;
+}
+
+.map-list .card-subtitle {
+   text-align: left;
+   margin-bottom: 0.5rem;
+   margin-top: 0.5rem;
+}
+
 #map {
    position: static;
    display: block;
@@ -229,54 +276,13 @@ a {
    margin-bottom: 0.5rem;
 }
 
-/* Home Page */
-
-.home-page .card {
-   min-width: fit-content;
-   margin-left: auto;
-   margin-right: auto;
-   margin-bottom: 1rem;
-   margin-top: 1rem;
-   padding-bottom: 1rem;
-   border-color: black;
-} 
-
-.home-page .card-text {
-   margin-left: 1rem;
-   margin-right: 1rem;
-}
-
-.home-page form {
-   margin-left: 1rem;
-   margin-right: 1rem;
-}
-
-.home-page form input {
-   background-color: inherit;
-}
-
-.home-page form textarea {
-   margin-top: 1rem;
-   margin-bottom: 1rem;
-   width: 100%;
-   height: 5rem;
-   background-color: inherit;
-}
-
-.home-page .slideshow .slideshow-img {
-   max-width: 50%;
-   display: flex;
-   margin: 1rem auto;
-   border-radius: 0.5rem;
-}
-
 /* Login Page */
 
 .container .login-page {
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-top: 8.5rem; /*Header +5rem*/
+   margin-top: 8rem; /*Header +4.5rem*/
    margin-bottom: 3.5rem;
 }
 
