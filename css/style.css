@@ -299,6 +299,17 @@ a {
    margin-bottom: 1rem;
 }
 
+/* Beginner Page */
+.button-container {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+ }
+
+ .button {
+   width: 50%;
+ }
+
 @media (min-width: 768px) {
    .home-page .slideshow .slideshow-img {
       max-width: 65%;
