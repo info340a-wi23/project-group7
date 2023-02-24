@@ -1,8 +1,13 @@
 import React from 'react';
+import { TrainingHeader } from './TrainingHeader.js';
+import { TrainingCards } from './TrainingCards.js';
 
 export default function App(props) {
 
     return (
-        <div></div>
+        <div>
+            <TrainingHeader />
+            <TrainingCards />
+        </div>
     );
 }
