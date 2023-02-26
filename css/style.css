@@ -2,6 +2,8 @@ body {
    background-color: rgb(219, 218, 192);
    font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif;
    margin: 0;
+   width: 100%;
+   height: 100%;
 }
 
 header {
@@ -52,6 +54,7 @@ footer {
    text-align: center;
    color: antiquewhite;
    text-shadow: rgb(25, 39, 13) 1px 1px;
+   z-index: 1;
 }
 
 /* Navigation Bar */
@@ -260,7 +263,10 @@ a {
    margin-bottom: 1rem;
    margin-top: 1rem;
    border-radius: 0.5rem;
-   width: 75%;
+   width: 600px;
+   height: 500px;
+   overflow: hidden;
+   z-index: 0;
 }
 
 #map-search-bar {
