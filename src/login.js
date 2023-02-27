@@ -6,13 +6,14 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
     if (form.checkValidity()) {
       form.classList.add('d-none');
-      document.querySelector('.alert').classList.remove('d-none');
+      document.querySelector('h1').textContent = "Welcome to Trailblazer";
+      document.querySelector('#choose').classList.remove('d-none');
+      document.querySelector('#links').classList.remove('d-none');
     } else {
       form.classList.add('was-validated');
       document.querySelector('button').disabled = true;
     }
 });
-
 
 const password = document.querySelector('#passwordInput');
 const uname = document.querySelector('#unameInput');
