@@ -15,15 +15,14 @@ form.addEventListener('submit', function(event) {
 
 
 const password = document.querySelector('#passwordInput');
+const uname = document.querySelector('#unameInput');
 
 password.addEventListener('input', function() {
-    let uname = document.querySelector('#unameInput');
-
-    if (password.value !== uname.value) {
+    if (password.value === uname.value) {
+        password.setCustomValidity('');
+    } else {
         password.setCustomValidity('You must enter a valid password.');
         document.querySelector('#passwordFeedback').textContent = 'You must enter a valid password.';
-    } else {
-        password.setCustomValidity('');
     }
 });
 
