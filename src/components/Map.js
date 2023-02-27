@@ -6,7 +6,7 @@ const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
 }).addTo(map);
 map.setView(coords, 7);
 
-let data = fetch('../data/wta-parks-data.json');
+let data = fetch('data/wta-parks-data.json');
 
 for (const item in Object.entries(data)) {
    console.log(item);
