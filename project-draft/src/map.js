@@ -6,11 +6,9 @@ const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
 }).addTo(map);
 map.setView(coords, 7);
 
-let data = fetch('data/wta-parks-data.json');
-console.log("data fetched");
-console.log(data);
+let data = fetch('../data/wta-parks-data.json');
 
-for (const item of data) {
+for (const item in Object.keys(data)) {
    console.log(item);
    L.marker([item.coordinates.lat, item.coordinates.lon]).addTo(map);
 }
