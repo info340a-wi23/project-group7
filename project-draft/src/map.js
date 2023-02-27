@@ -8,7 +8,7 @@ map.setView(coords, 7);
 
 let data = fetch('../data/wta-parks-data.json');
 
-for (const item in Object.keys(data)) {
+for (const item in Object.entries(data)) {
    console.log(item);
    L.marker([item.coordinates.lat, item.coordinates.lon]).addTo(map);
 }
