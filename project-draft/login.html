@@ -21,16 +21,25 @@
       </div>
    </header>
    <main>
+      <p class="alert alert-success d-none">You're in!</p>
+      
       <div class="container">
          <div class="login-page">
             <div class="card">
                <h1>Login</h1>
-               <form>
-                  <label for="uname">Username:</label><br>
-                  <input type="text" id="uname" name="uname" placeholder="Username"><br>
-                  <label for="password">Password:</label><br>
-                  <input type="password" id="password" name="password" placeholder="Password"><br>
-                  <input type="submit" value="Login">
+               <form id="signUpForm" class="form" novalidate>
+                  <div class="uname">
+                     <label for="unameInput">Username:</label>
+                     <input type="text" id="unameInput" name="uname" class="form-control" required>
+                     <div id ="unameFeedback" class="invalid-feedback">Please enter a valid username</div>
+                  </div>
+                  <div class="password">
+                     <label for="passwordInput">Password:</label>
+                     <input type="password" id="passwordInput" name="password" class="form-control" required>
+                     <div id="passwordFeedback" class="invalid-feedback">Please enter a valid password</div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Login</button> 
                </form>
             </div>
          </div>
@@ -39,5 +48,8 @@
    <footer class="footer d-flex align-items-end">
       <p>© INFO 340 - Winter 2023</p>
    </footer>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+   <script src="./login.js"></script>
 </body>
 </html>
