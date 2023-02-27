@@ -1,8 +1,8 @@
 import React from 'react';
-import Nav from 'Nav';
-import Footer from 'Footer';
+import Nav from './Nav.js';
+import Footer from './Footer.js';
 
-function App() {
+export default function App() {
    return (
       <div>
          <Nav />
@@ -10,5 +10,3 @@ function App() {
       </div>
    )
 }
-
-export default App;
