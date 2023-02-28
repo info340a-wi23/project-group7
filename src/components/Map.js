@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './Nav.js';
+import MainMap from './MainMap.js';
 import Footer from './Footer.js';
 
 export default function Map() {
@@ -8,7 +9,6 @@ export default function Map() {
          <Nav />
          <main>
             <h1 class="title">Trail Finder</h1>
-            <div id="map"></div>
             <h2>Trails</h2>
             <div class="container">
                <div class="row">
@@ -26,4 +26,5 @@ export default function Map() {
          <Footer />
       </div>
    );
+   // <MainMap /> goes between h1 and h2
 }
