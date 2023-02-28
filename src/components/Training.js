@@ -1,13 +1,17 @@
 import React from 'react';
+import Nav from './Nav.js';
 import { TrainingHeader } from './TrainingHeader.js';
 import { TrainingCards } from './TrainingCards.js';
+import Footer from './Footer.js';
 
 export default function App(props) {
 
     return (
         <div>
+            <Nav />
             <TrainingHeader />
             <TrainingCards />
+            <Footer />
         </div>
     );
 }
