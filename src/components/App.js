@@ -1,14 +1,14 @@
 import React from 'react';
-import Nav from './Nav.js';
-import IndexMain from './IndexMain.js';
-import Footer from './Footer.js';
+import Homepage from './Homepage.js';
+import Login from './Login.js';
 
 export default function App() {
-   return (
-      <div>
-         <Nav />
-         <IndexMain />
-         <Footer />
-      </div>
-   )
+   const path = window.location.pathname;
+   if ((path == '/') | (path == '/index.html')) {
+      return (<Homepage />);
+   } else if (path == '/login.html') {
+      return (<Login />)
+   } else {
+      return (<div>404 Not Found</div>);
+   }
 }
