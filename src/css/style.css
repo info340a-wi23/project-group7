@@ -344,7 +344,7 @@ a {
    }
 
    header {
-      background-image: url(../img/header-background.jpeg);
+      background-image: url(../../public/img/header-background.jpeg);
       background-position: center;
       background-size: cover;
       background-color: rgb(36, 89, 31);
@@ -359,7 +359,7 @@ a {
    }
 
    footer {
-      background-image: url(../img/header-background.jpeg);
+      background-image: url(../../public/img/header-background.jpeg);
       background-position: bottom;
       background-size: cover;
       background-color: rgb(53, 36, 12);
