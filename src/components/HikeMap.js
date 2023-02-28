@@ -1,0 +1,10 @@
+import React from 'react';
+
+export default function HikeMap() {
+   return (
+      <div>
+         <h2>Hike Map</h2>
+         <img id="map" src="img/pct-section-j-map.jpeg" alt="PCT Section J Map"></img>
+      </div>
+   )
+}

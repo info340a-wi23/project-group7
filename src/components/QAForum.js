@@ -1,0 +1,92 @@
+import React from 'react';
+
+export default function QAForum() {
+   return (
+      <div>
+         <h2>Q&A Forum</h2>
+         <div class="container qa-block">
+            <div class="user-post row">
+               <div class="col col-12 card">
+                  <div class="row">
+                     <div class="col col-6 col-lg-3">
+                        <div class="row">
+                           <div class="col col-3">
+                              <img class="profile-pic" src="img/blank-profile-picture.jpeg" alt="Blank profile picture" />
+                           </div>
+                           <div class="col col-9 post-info">
+                              <h5 class="card-title"><a href="sketchb02.html">@sketchb02</a></h5>
+                              <h6 class="card-subtitle">May 26, 2022</h6>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col col-6 col-lg-9">
+                        <h6 class="question-header">What's the trail quality usually like in June?</h6>
+                        <p class="question-long">I'm planning a backpacking trip for the PCT then, but I've heard that snow sticks around on this trail longer than most and I don't have a lot of experience with that.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col col-12 card">
+                  <div class="row">
+                     <div class="col col-6 col-lg-3">
+                        <div class="row">
+                           <div class="col col-3">
+                              <img class="profile-pic" src="img/blank-profile-picture.jpeg" alt="Blank profile picture" />
+                           </div>
+                           <div class="col col-9 post-info">
+                              <h5 class="card-title"><a href="seang.html">@seang</a></h5>
+                              <h6 class="card-subtitle">May 29, 2022</h6>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col col-6 col-lg-9">
+                        <p>I hiked this stretch last June, and there were sections where the snow was a few inches deep. I'd recommend getting a pair of snow spikes if you don't have some already.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="container qa-block">
+            <div class="user-post row">
+               <div class="col col-12 card">
+                  <div class="row">
+                     <div class="col col-6 col-lg-3">
+                        <div class="row">
+                           <div class="col col-3">
+                              <img class="profile-pic" src="img/blank-profile-picture.jpeg" alt="Blank profile picture" />
+                           </div>
+                           <div class="col col-9 post-info">
+                              <h5 class="card-title"><a href="darthur42.html">@darthur42</a></h5>
+                              <h6 class="card-subtitle">March 30, 2022</h6>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col col-6 col-lg-9">
+                        <h6 class="question-header">How difficult are the first and last two miles of the trail?</h6>
+                        <p class="question-long">I'm hoping to take my kids on a day hike near one of the passes, but they don't have a lot of experience hiking more difficult trails. Would the first/last couple miles of this trail be a good difficulty level for kids?</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col col-12 card">
+                  <div class="row">
+                     <div class="col col-6 col-lg-3">
+                        <div class="row">
+                           <div class="col col-3">
+                              <img class="profile-pic" src="img/blank-profile-picture.jpeg" alt="Blank profile picture" />
+                           </div>
+                           <div class="col col-9 post-info">
+                              <h5 class="card-title"><a href="seang.html">@seang</a></h5>
+                              <h6 class="card-subtitle">April 04, 2022</h6>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col col-6 col-lg-9">
+                        <p>From what I remember from my hike last summer, the first few miles of each end are pretty flat; you shouldn't have any issues taking your kids up there. Just keep an eye out for snow!</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   )
+}

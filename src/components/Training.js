@@ -9,8 +9,10 @@ export default function App(props) {
     return (
         <div>
             <Nav />
-            <TrainingHeader />
-            <TrainingCards />
+            <main>
+                <TrainingHeader />
+                <TrainingCards />
+            </main>
             <Footer />
         </div>
     );

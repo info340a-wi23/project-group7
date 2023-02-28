@@ -9,6 +9,7 @@ export default function Map() {
          <Nav />
          <main>
             <h1 class="title">Trail Finder</h1>
+            <MainMap />
             <h2>Trails</h2>
             <div class="container">
                <div class="row">
@@ -26,5 +27,4 @@ export default function Map() {
          <Footer />
       </div>
    );
-   // <MainMap /> goes between h1 and h2
 }
