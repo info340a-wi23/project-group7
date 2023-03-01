@@ -15,7 +15,7 @@ export default function MainMap() {
 
    return (
       <div id="map">
-         <MapContainer center={coords} zoom={7} scrollWheelZoom={true}>
+         <MapContainer center={coords} zoom={7} scrollWheelZoom={true} minZoom={7} maxZoom={16}>
             <TileLayer
             attribution="Tiles courtesy of the <a href='https://usgs.gov/'>U.S. Geological Survey</a>"
             url="https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}"
