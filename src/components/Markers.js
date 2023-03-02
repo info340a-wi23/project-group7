@@ -17,7 +17,7 @@ export default function Markers() {
 
    const customIcon = new Icon ({
       iconUrl: marker,
-      iconSize: [33, 33]
+      iconSize: [20, 20]
    })
 
    const filteredData = (arr) => {
