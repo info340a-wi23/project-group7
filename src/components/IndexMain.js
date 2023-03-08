@@ -1,7 +1,7 @@
 import React from 'react';
 import IndexForm from './IndexForm';
 
-export default function IndexMain() {
+export default function IndexMain(props) {
    return (
       <main>
          <h1 class="title">TrailBlazer</h1>

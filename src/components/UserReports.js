@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function UserReports() {
+export default function UserReports(props) {
    return (
       <div>
          <h2>User Reports</h2>

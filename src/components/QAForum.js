@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function QAForum() {
+export default function QAForum(props) {
    return (
       <div>
          <h2>Q&A Forum</h2>

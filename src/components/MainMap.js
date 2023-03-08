@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import Markers from './Markers.js';
 
-export default function MainMap() {
+export default function MainMap(props) {
    return (
       <div id="map">
          <MapContainer center={[47.2326, -120.8472]} zoom={7} scrollWheelZoom={true} minZoom={7} maxZoom={16}>

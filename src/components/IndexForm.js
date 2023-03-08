@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function IndexForm() {
+export default function IndexForm(props) {
    return (
       <form>
          <label for="name">Name:</label>

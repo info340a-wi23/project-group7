@@ -3,7 +3,7 @@ import { Icon } from 'leaflet';
 import { Marker, Popup } from 'react-leaflet';
 import marker from '../img/hiking-icon.jpeg';
 
-export default function Markers() {
+export default function Markers(props) {
    const [data, setData] = useState([]);
 
    useEffect(() => {

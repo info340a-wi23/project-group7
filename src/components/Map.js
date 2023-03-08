@@ -3,7 +3,7 @@ import Nav from './Nav.js';
 import MainMap from './MainMap.js';
 import Footer from './Footer.js';
 
-export default function Map() {
+export default function Map(props) {
    return (
       <div>
          <Nav />

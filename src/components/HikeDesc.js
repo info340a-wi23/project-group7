@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function HikeDesc() {
+export default function HikeDesc(props) {
    return (
       <div>
          <h1 class="title">Pacific Crest Trail - Section J</h1>

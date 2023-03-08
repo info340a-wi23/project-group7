@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function HikeMap() {
+export default function HikeMap(props) {
    return (
       <div>
          <h2>Hike Map</h2>

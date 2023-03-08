@@ -6,7 +6,7 @@ import QAForum from './QAForum.js';
 import UserReports from './UserReports.js';
 import Footer from './Footer.js';
 
-export default function PCTSectionJ() {
+export default function PCTSectionJ(props) {
    return (
       <div>
          <Nav />
