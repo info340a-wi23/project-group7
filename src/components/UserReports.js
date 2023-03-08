@@ -11,14 +11,14 @@ export default function UserReports(props) {
                      <div class="col col-6 col-lg-3">
                         <div class="row">
                            <div class="col col-3">
-                              <img class="profile-pic" src="img/blank-profile-picture.jpeg" alt="Blank profile picture" />
+                              <img class="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile picture" />
                            </div>
                            <div class="col col-9 post-info">
                               <h5 class="card-title"><a href="sketchb02.html">@sketchb02</a></h5>
                               <h6 class="card-subtitle">June 26, 2022</h6>
                            </div>
                         </div>
-                        <img class="img-gallery" src="img/sketchb02-pct-section-j-post.jpeg" alt="sketchb02's photo from PCT Section J" />
+                        <img class="img-gallery" src="../img/sketchb02-pct-section-j-post.jpeg" alt="sketchb02's photo from PCT Section J" />
                      </div>
                      <div class="col col-6 col-lg-9">
                         <p>The following text is from a WTA post by Adrian H.</p>

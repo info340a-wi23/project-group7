@@ -11,7 +11,7 @@ export default function QAForum(props) {
                      <div class="col col-6 col-lg-3">
                         <div class="row">
                            <div class="col col-3">
-                              <img class="profile-pic" src="img/blank-profile-picture.jpeg" alt="Blank profile picture" />
+                              <img class="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile picture" />
                            </div>
                            <div class="col col-9 post-info">
                               <h5 class="card-title"><a href="sketchb02.html">@sketchb02</a></h5>
@@ -30,7 +30,7 @@ export default function QAForum(props) {
                      <div class="col col-6 col-lg-3">
                         <div class="row">
                            <div class="col col-3">
-                              <img class="profile-pic" src="img/blank-profile-picture.jpeg" alt="Blank profile picture" />
+                              <img class="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile picture" />
                            </div>
                            <div class="col col-9 post-info">
                               <h5 class="card-title"><a href="seang.html">@seang</a></h5>
@@ -53,7 +53,7 @@ export default function QAForum(props) {
                      <div class="col col-6 col-lg-3">
                         <div class="row">
                            <div class="col col-3">
-                              <img class="profile-pic" src="img/blank-profile-picture.jpeg" alt="Blank profile picture" />
+                              <img class="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile picture" />
                            </div>
                            <div class="col col-9 post-info">
                               <h5 class="card-title"><a href="darthur42.html">@darthur42</a></h5>
@@ -72,7 +72,7 @@ export default function QAForum(props) {
                      <div class="col col-6 col-lg-3">
                         <div class="row">
                            <div class="col col-3">
-                              <img class="profile-pic" src="img/blank-profile-picture.jpeg" alt="Blank profile picture" />
+                              <img class="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile picture" />
                            </div>
                            <div class="col col-9 post-info">
                               <h5 class="card-title"><a href="seang.html">@seang</a></h5>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function HikeDesc(props) {
    return (
@@ -11,7 +12,7 @@ export default function HikeDesc(props) {
                <div class="col col-12 col-lg-6">
                   <div class="highlight">
                      <div class="card">
-                        <img class="card-img" src="img/pct-section-j.jpeg" alt="Trap Lake" />
+                        <img class="card-img" src="../img/pct-section-j.jpeg" alt="Trap Lake" />
                         <div class="card-img-overlay">
                            <p class="card-text">Trap Lake - Photo by <a href="https://www.rajahamid.com/journal/2022/9/29/solo-hiking-section-j-of-the-pct-in-4-days">Raja Hamid</a></p>
                         </div>
@@ -42,7 +43,7 @@ export default function HikeDesc(props) {
                      <p>This route traverses the Alpine Lakes Wilderness, and the trail passes by a least a dozen lakes along the way, many of them swimmable in late-summer. But the lakes aren't the only attraction. Hikers here encounter meadows, old-growth trees, and stunning views of towering mountains.</p>
                      <p>This trail is not for the beginning backpacker. There is considerable elevation gain and loss - about 16,000 feet! Some places are impassable until well into August when the snow melts out. And the distance requires hikers to carry six or seven days of food and arrange for a car shuttle or pick-up at Stevens Pass.</p>
                      <p>Beginning from the Snoqualmie Pass trailhead, hikers plunge into the stunning high country, starting off Day 1 out of this trailhead with a trek across the Kendall Katwalk. As you head further north, you may find some relative solitude, but this section is popular and accessible from both ends, so plan your outing accordingly; it may be hard to find a suitable place to camp, but please abide by Leave No Trace principles, and personify good trail etiquette.</p>
-                     <p>Check out our <a href="training1.html">training page</a> to prepare for this trail!</p>
+                     <p>Check out our <Link to="training">training page</Link> to prepare for this trail!</p>
                   </div>
                </div>
             </div>

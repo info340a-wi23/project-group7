@@ -15,7 +15,7 @@ export default function App() {
             <Route path={'map'} element={<Map />} />
             <Route path={'training'} element={<Training />} />
             <Route path={'login'} element={<Login />} />
-            <Route path={'pacific-crest-trail-section-j'} element={<PCTSectionJ />} />
+            <Route path={'map/pacific-crest-trail-section-j'} element={<PCTSectionJ />} />
          </Routes>
       </div>
    );
