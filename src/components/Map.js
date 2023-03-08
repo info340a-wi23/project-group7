@@ -9,7 +9,7 @@ export default function Map(props) {
          <Nav />
          <main>
             <h1 class="title">Trail Finder</h1>
-            <MainMap />
+            <MainMap center={[47.2326, -120.8472]} zoom={7}/>
             <h2>Trails</h2>
             <div class="container">
                <div class="row">
