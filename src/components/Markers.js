@@ -20,14 +20,13 @@ export default function Markers(props) {
       iconSize: [20, 20]
    })
 
-   const filteredData = (arr) => {
-      const required = arr.filter(el => {
-         return el.coordinates.lat;
-      });
-      return required;
+   const filteredData = (hikes) => {
+      const valid = hikes.filter(hike => {return hike.coordinates.lat;})
+         .filter(hike => {return hike.coordinates.lon;})
+         .filter(hike => hike.length.split(" ")[0] != 0);
+      const lengthFiltered = valid.filter(hike => hike.length.split(" ")[0] <= props.maxLength);
+      return lengthFiltered;
    }
-
-   console.log(filteredData(data));
 
    return (
       <div>
