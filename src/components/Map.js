@@ -22,7 +22,10 @@ export default function Map(props) {
          .filter(hike => hike.coordinates.lat && hike.coordinates.lon) // Filter for hikes with valid coordinates
          .filter(hike => hike.length.split(" ")[0] != 0); // Filter for hikes with non-zero lengths
       const lengthFiltered = valid.filter(hike => hike.length.split(" ")[0] <= maxLength); // User's max length filter
-      return lengthFiltered;
+      const itemsWithId = lengthFiltered.map((item, index) => {
+         return { ...item, id: index };
+      })
+      return itemsWithId;
    }
 
    const handleSubmit = (event) => {
@@ -52,7 +55,7 @@ export default function Map(props) {
             <div className="container">
                {filteredData(data).map(item => {
                   return (
-                     <div className="row trail-card">
+                     <div className="row trail-card" key={item.id}>
                         <div className="col col-12">
                            <div className="card map-list">
                               <h5 className="card-title"><Link to='pacific-crest-trail-section-j'>{item.name}</Link></h5>

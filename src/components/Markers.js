@@ -15,7 +15,7 @@ export default function Markers(props) {
    return (
       <div>
          {data.map(item => (
-            <Marker position={[item.coordinates.lat, item.coordinates.lon]} icon={customIcon}>
+            <Marker position={[item.coordinates.lat, item.coordinates.lon]} icon={customIcon} key={item.id}>
                <Popup>
                   <Link to="/pacific-crest-trail-section-j">{item.name}</Link>
                </Popup>
