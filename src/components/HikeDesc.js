@@ -4,41 +4,41 @@ import { Link } from 'react-router-dom';
 export default function HikeDesc(props) {
    return (
       <div>
-         <h1 class="title">Pacific Crest Trail - Section J</h1>
-         <p class="subtitle">Snoqualmie Pass to Stevens Pass</p>
+         <h1 className="title">Pacific Crest Trail - Section J</h1>
+         <p className="subtitle">Snoqualmie Pass to Stevens Pass</p>
    
-         <div class="container">
-            <div class="row">
-               <div class="col col-12 col-lg-6">
-                  <div class="highlight">
-                     <div class="card">
-                        <img class="card-img" src="../img/pct-section-j.jpeg" alt="Trap Lake" />
-                        <div class="card-img-overlay">
-                           <p class="card-text">Trap Lake - Photo by <a href="https://www.rajahamid.com/journal/2022/9/29/solo-hiking-section-j-of-the-pct-in-4-days">Raja Hamid</a></p>
+         <div className="container">
+            <div className="row">
+               <div className="col col-12 col-lg-6">
+                  <div className="highlight">
+                     <div className="card">
+                        <img className="card-img" src="../img/pct-section-j.jpeg" alt="Trap Lake" />
+                        <div className="card-img-overlay">
+                           <p className="card-text">Trap Lake - Photo by <a href="https://www.rajahamid.com/journal/2022/9/29/solo-hiking-section-j-of-the-pct-in-4-days">Raja Hamid</a></p>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col col-12 col-lg-6">
-                  <div class="trail-data row justify-content-center">
-                     <div class="col col-6 col-lg-3 card">
-                        <h5 class="card-title">Length</h5>
-                        <p class="card-text">74.7 mi, one-way</p>
+               <div className="col col-12 col-lg-6">
+                  <div className="trail-data row justify-content-center">
+                     <div className="col col-6 col-lg-3 card">
+                        <h5 className="card-title">Length</h5>
+                        <p className="card-text">74.7 mi, one-way</p>
                      </div>
-                     <div class="col col-6 col-lg-3 card">
-                        <h5 class="card-title">Elevation Gain</h5>
-                        <p class="card-text">16,000 ft</p>
+                     <div className="col col-6 col-lg-3 card">
+                        <h5 className="card-title">Elevation Gain</h5>
+                        <p className="card-text">16,000 ft</p>
                      </div>
-                     <div class="col col-6 col-lg-3 card">
-                        <h5 class="card-title">Highest Point</h5>
-                        <p class="card-text">5,988 ft</p>
+                     <div className="col col-6 col-lg-3 card">
+                        <h5 className="card-title">Highest Point</h5>
+                        <p className="card-text">5,988 ft</p>
                      </div>
-                     <div class="col col-6 col-lg-3 card">
-                        <h5 class="card-title">Difficulty</h5>
-                        <p class="card-text"><a href="training1.html">Very Hard</a></p>
+                     <div className="col col-6 col-lg-3 card">
+                        <h5 className="card-title">Difficulty</h5>
+                        <p className="card-text"><a href="training1.html">Very Hard</a></p>
                      </div>
                   </div>
-                  <div class="col col-12 hike-description">
+                  <div className="col col-12 hike-description">
                      <h5>Hike Description (from <a href="https://www.wta.org/go-hiking/hikes/pacific-crest-trail-section-j-snoqualmie-pass-to-stevens-pass-east#hike-full-description">WTA</a>)</h5>
                      <p>This route traverses the Alpine Lakes Wilderness, and the trail passes by a least a dozen lakes along the way, many of them swimmable in late-summer. But the lakes aren't the only attraction. Hikers here encounter meadows, old-growth trees, and stunning views of towering mountains.</p>
                      <p>This trail is not for the beginning backpacker. There is considerable elevation gain and loss - about 16,000 feet! Some places are impassable until well into August when the snow melts out. And the distance requires hikers to carry six or seven days of food and arrange for a car shuttle or pick-up at Stevens Pass.</p>

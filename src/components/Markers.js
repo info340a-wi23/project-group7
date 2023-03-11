@@ -1,39 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Icon } from 'leaflet';
-import { Marker, Popup } from 'react-leaflet';
 import marker from '../img/hiking-icon.jpeg';
+import { Marker, Popup } from 'react-leaflet';
 
 export default function Markers(props) {
-   const [data, setData] = useState([]);
-
-   useEffect(() => {
-      const fetchData = async () => {
-         const response = await fetch('/data/wta-parks-data.json');
-         const jsonData = await response.json();
-         setData(jsonData);
-       };
-      fetchData();
-   }, []);
+   const data = props.data;
 
    const customIcon = new Icon ({
       iconUrl: marker,
       iconSize: [20, 20]
    })
 
-   const filteredData = (hikes) => {
-      const valid = hikes.filter(hike => {return hike.coordinates.lat;})
-         .filter(hike => {return hike.coordinates.lon;})
-         .filter(hike => hike.length.split(" ")[0] != 0);
-      const lengthFiltered = valid.filter(hike => hike.length.split(" ")[0] <= props.maxLength);
-      return lengthFiltered;
-   }
-
    return (
       <div>
-         {filteredData(data).map(item => (
+         {data.map(item => (
             <Marker position={[item.coordinates.lat, item.coordinates.lon]} icon={customIcon}>
                <Popup>
-                  <a href="pacific-crest-trail-section-j.html">{item.name}</a>
+                  <Link to="/pacific-crest-trail-section-j">{item.name}</Link>
                </Popup>
             </Marker>
          ))}

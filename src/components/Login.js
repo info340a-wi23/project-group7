@@ -7,25 +7,25 @@ export default function Login(props) {
       <div>
          <Nav />
          <main>
-            <div class="container">
-               <div class="login-page">
-                  <div class="card">
+            <div className="container">
+               <div className="login-page">
+                  <div className="card">
                      <h1>Login</h1>
-                     <h6 id="choose" class="d-none">Choose a page to redirect to!</h6>
-                     <h6 id="links" class="d-none"><a href="../project-draft/index.html">Home</a>  <a href="../project-draft/map.html">Map</a> <a href="../project-draft/training.html">Training</a></h6>
-                     <form id="signUpForm" class="form" novalidate>
-                        <div class="uname">
+                     <h6 id="choose" className="d-none">Choose a page to redirect to!</h6>
+                     <h6 id="links" className="d-none"><a href="../project-draft/index.html">Home</a>  <a href="../project-draft/map.html">Map</a> <a href="../project-draft/training.html">Training</a></h6>
+                     <form id="signUpForm" className="form" novalidate>
+                        <div className="uname">
                            <label for="unameInput">Username:</label>
-                           <input type="text" id="unameInput" name="uname" class="form-control" required />
-                           <div id ="unameFeedback" class="invalid-feedback">Please enter a valid username</div>
+                           <input type="text" id="unameInput" name="uname" className="form-control" required />
+                           <div id ="unameFeedback" className="invalid-feedback">Please enter a valid username</div>
                         </div>
-                        <div class="password">
+                        <div className="password">
                            <label for="passwordInput">Password:</label>
-                           <input type="password" id="passwordInput" name="password" class="form-control" required />
-                           <div id="passwordFeedback" class="invalid-feedback">Please enter a valid password</div>
+                           <input type="password" id="passwordInput" name="password" className="form-control" required />
+                           <div id="passwordFeedback" className="invalid-feedback">Please enter a valid password</div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Login</button> 
+                        <button type="submit" className="btn btn-primary">Login</button> 
                      </form>
                   </div>
                </div>
