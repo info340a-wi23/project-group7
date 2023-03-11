@@ -18,10 +18,10 @@ export default function Map(props) {
    }, []);
 
    const filteredData = (hikes) => {
-      const valid = hikes.filter(hike => {return hike.coordinates.lat;})
-         .filter(hike => {return hike.coordinates.lon;})
-         .filter(hike => hike.length.split(" ")[0] != 0);
-      const lengthFiltered = valid.filter(hike => hike.length.split(" ")[0] <= maxLength);
+      const valid = hikes
+         .filter(hike => hike.coordinates.lat && hike.coordinates.lon) // Filter for hikes with valid coordinates
+         .filter(hike => hike.length.split(" ")[0] != 0); // Filter for hikes with non-zero lengths
+      const lengthFiltered = valid.filter(hike => hike.length.split(" ")[0] <= maxLength); // User's max length filter
       return lengthFiltered;
    }
 
@@ -45,9 +45,9 @@ export default function Map(props) {
                   <option value="med">Medium</option>
                   <option value="hard">Hard</option>
                </select>
-               <input id="submit" type="submit" value="Submit"></input>
+               <input id="submit" type="submit" value="Search"></input>
             </form>
-            <MainMap center={[47.2326, -120.8472]} zoom={7} maxLength={maxLength} data={filteredData(data)}/>
+            <MainMap center={[47.2326, -120.8472]} zoom={7} maxLength={maxLength} data={filteredData(data)} />
             <h2>Trails</h2>
             <div className="container">
                {filteredData(data).map(item => {
