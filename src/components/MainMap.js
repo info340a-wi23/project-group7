@@ -31,7 +31,7 @@ export default function MainMap(props) {
             url="https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}"
             maxZoom={16}
             />
-            <Markers maxLength={props.maxLength} data={filteredData(data)} />
+            <Markers maxLength={props.maxLength} data={props.data} />
          </MapContainer>
       </div>
    );

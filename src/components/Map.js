@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from './Nav.js';
 import MainMap from './MainMap.js';
@@ -6,6 +6,24 @@ import Footer from './Footer.js';
 
 export default function Map(props) {
    const [maxLength, setMaxLength] = useState(100);
+   const [data, setData] = useState([]);
+
+   useEffect(() => {
+      const fetchData = async () => {
+         const response = await fetch('/data/wta-parks-data.json');
+         const jsonData = await response.json();
+         setData(jsonData);
+       };
+      fetchData();
+   }, []);
+
+   const filteredData = (hikes) => {
+      const valid = hikes.filter(hike => {return hike.coordinates.lat;})
+         .filter(hike => {return hike.coordinates.lon;})
+         .filter(hike => hike.length.split(" ")[0] != 0);
+      const lengthFiltered = valid.filter(hike => hike.length.split(" ")[0] <= maxLength);
+      return lengthFiltered;
+   }
 
    const handleSubmit = (event) => {
       event.preventDefault();
@@ -29,18 +47,22 @@ export default function Map(props) {
                </select>
                <input id="submit" type="submit" value="Submit"></input>
             </form>
-            <MainMap center={[47.2326, -120.8472]} zoom={7} maxLength={maxLength} />
+            <MainMap center={[47.2326, -120.8472]} zoom={7} maxLength={maxLength} data={filteredData(data)}/>
             <h2>Trails</h2>
             <div className="container">
-               <div className="row">
-                  <div className="col col-12">
-                     <div className="card map-list">
-                        <h5 className="card-title"><Link to='pacific-crest-trail-section-j'>Pacific Crest Trail - Section J</Link></h5>
-                        <h6 className="card-subtitle">Difficulty: Very Hard</h6>
-                        <p>This route traverses the Alpine Lakes Wilderness, and the trail passes by a least a dozen lakes along the way, many of them swimmable in late-summer. But the lakes aren't the only attraction. Hikers here encounter meadows, old-growth trees, and stunning views of towering mountains.</p>
+               {filteredData(data).map(item => {
+                  return (
+                     <div className="row" id="trail-card">
+                        <div className="col col-12">
+                           <div className="card map-list">
+                              <h5 className="card-title"><Link to='pacific-crest-trail-section-j'>{item.name}</Link></h5>
+                              <h6 className="card-subtitle">Length: {item.length}</h6>
+                              <p>Features: {item.features}</p>
+                           </div>
+                        </div>
                      </div>
-                  </div>
-               </div>
+                  );
+               })}
             </div>
          </main>
          <Footer />

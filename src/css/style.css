@@ -291,6 +291,10 @@ a {
    margin-right: 1rem;
 }
 
+#trail-card {
+   margin-bottom: 0.5rem;
+}
+
 /* Login Page */
 
 .container .login-page {
