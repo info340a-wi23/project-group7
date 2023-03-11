@@ -37,9 +37,9 @@ export default function Map(props) {
          <main>
             <h1 className="title">Trail Finder</h1>
             <form id="map-filter" onSubmit={handleSubmit}>
-               <label for="max-length">Max Length (mi):</label>
+               <label htmlFor="max-length">Max Length (mi):</label>
                <input type="text" id="max-length" name="max-length" placeholder="Max length (mi)..." />
-               <label for="diff">Difficulty:</label>
+               <label htmlFor="diff">Difficulty:</label>
                <select type="diff" id="diff" name="diff">
                   <option value="easy">Easy</option>
                   <option value="med">Medium</option>
@@ -52,12 +52,12 @@ export default function Map(props) {
             <div className="container">
                {filteredData(data).map(item => {
                   return (
-                     <div className="row" id="trail-card">
+                     <div className="row trail-card">
                         <div className="col col-12">
                            <div className="card map-list">
                               <h5 className="card-title"><Link to='pacific-crest-trail-section-j'>{item.name}</Link></h5>
                               <h6 className="card-subtitle">Length: {item.length}</h6>
-                              <p>Features: {item.features}</p>
+                              <p>Features: {item.features.map(feature => feature).join(' \u2022 ')}</p>
                            </div>
                         </div>
                      </div>
