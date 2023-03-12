@@ -261,19 +261,37 @@ a {
    margin-left: auto;
    margin-right: auto;
    margin-bottom: 1rem;
-   margin-top: 1rem;
-   width: 75%;
+   margin-top: 0.5rem;
+   width: 100%;
    height: 500px;
    overflow: hidden;
    z-index: 0;
 }
 
-#map-search-bar {
+#map-filter {
+   text-align: center;
    position: static;
    display: block;
    margin-left: auto;
    margin-right: auto;
    margin-top: 0.5rem;
+   margin-bottom: 0rem;
+}
+
+#map-filter label {
+   margin-left: 0.5rem;
+   margin-right: 0.5rem;
+}
+
+#map-filter input {
+   margin-right: 0.5rem;
+}
+
+#map-filter select {
+   margin-right: 1rem;
+}
+
+.trail-card {
    margin-bottom: 0.5rem;
 }
 
@@ -373,6 +391,19 @@ a {
       color: antiquewhite;
       text-shadow: rgb(25, 39, 13) 1px 1px;
    }
+
+   .leaflet-container, #map {
+      position: static;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+      width: 80%;
+      height: 500px;
+      overflow: hidden;
+      z-index: 0;
+   }
 }
 
 @media (min-width: 992px) {
@@ -381,5 +412,18 @@ a {
       display: flex;
       margin: 1rem auto;
       border-radius: 0.5rem;
+   }
+
+   .leaflet-container, #map {
+      position: static;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+      width: 75%;
+      height: 500px;
+      overflow: hidden;
+      z-index: 0;
    }
 }

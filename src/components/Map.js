@@ -1,29 +1,73 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from './Nav.js';
 import MainMap from './MainMap.js';
 import Footer from './Footer.js';
 
 export default function Map(props) {
+   const [maxLength, setMaxLength] = useState(100);
+   const [data, setData] = useState([]);
+
+   useEffect(() => {
+      const fetchData = async () => {
+         const response = await fetch('/data/wta-parks-data.json');
+         const jsonData = await response.json();
+         setData(jsonData);
+       };
+      fetchData();
+   }, []);
+
+   const filteredData = (hikes) => {
+      const valid = hikes
+         .filter(hike => hike.coordinates.lat && hike.coordinates.lon) // Filter for hikes with valid coordinates
+         .filter(hike => hike.length.split(" ")[0] != 0); // Filter for hikes with non-zero lengths
+      const lengthFiltered = valid.filter(hike => hike.length.split(" ")[0] <= maxLength); // User's max length filter
+      const itemsWithId = lengthFiltered.map((item, index) => {
+         return { ...item, id: index };
+      })
+      return itemsWithId;
+   }
+
+   const handleSubmit = (event) => {
+      event.preventDefault();
+      const maxLengthInput = document.getElementById('max-length').value;
+      setMaxLength(parseInt(maxLengthInput));
+   };
+
    return (
       <div>
          <Nav />
          <main>
-            <h1 class="title">Trail Finder</h1>
-            <MainMap />
+            <h1 className="title">Trail Finder</h1>
+            <form id="map-filter" onSubmit={handleSubmit}>
+               <label htmlFor="max-length">Max Length (mi):</label>
+               <input type="text" id="max-length" name="max-length" placeholder="Max length (mi)..." />
+               <label htmlFor="diff">Difficulty:</label>
+               <select type="diff" id="diff" name="diff">
+                  <option value="easy">Easy</option>
+                  <option value="med">Medium</option>
+                  <option value="hard">Hard</option>
+               </select>
+               <input id="submit" type="submit" value="Search"></input>
+            </form>
+            <MainMap center={[47.2326, -120.8472]} zoom={7} maxLength={maxLength} data={filteredData(data)} />
             <h2>Trails</h2>
-            <div class="container">
-               <div class="row">
-                  <div class="col col-12">
-                     <div class="card map-list">
-                        <h5 class="card-title"><a href="pacific-crest-trail-section-j.html">Pacific Crest Trail - Section J</a></h5>
-                        <h6 class="card-subtitle">Difficulty: Very Hard</h6>
-                        <p>This route traverses the Alpine Lakes Wilderness, and the trail passes by a least a dozen lakes along the way, many of them swimmable in late-summer. But the lakes aren't the only attraction. Hikers here encounter meadows, old-growth trees, and stunning views of towering mountains.</p>
+            <div className="container">
+               {filteredData(data).map(item => {
+                  return (
+                     <div className="row trail-card" key={item.id}>
+                        <div className="col col-12">
+                           <div className="card map-list">
+                              <h5 className="card-title"><Link to='pacific-crest-trail-section-j'>{item.name}</Link></h5>
+                              <h6 className="card-subtitle">Length: {item.length}</h6>
+                              <p>Features: {item.features.map(feature => feature).join(' \u2022 ')}</p>
+                           </div>
+                        </div>
                      </div>
-                  </div>
-               </div>
+                  );
+               })}
             </div>
          </main>
-         <script src='./MainMap.js'></script>
          <Footer />
       </div>
    );

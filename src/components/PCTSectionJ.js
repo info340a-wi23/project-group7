@@ -12,7 +12,7 @@ export default function PCTSectionJ(props) {
          <Nav />
          <main>
             <HikeDesc />
-            <HikeMap />
+            <HikeMap coords={[47.4278, -121.4135]} />
             <QAForum />
             <UserReports />
          </main>
