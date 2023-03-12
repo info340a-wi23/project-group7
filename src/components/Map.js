@@ -7,6 +7,7 @@ import Footer from './Footer.js';
 export default function Map(props) {
    const [maxLength, setMaxLength] = useState(100);
    const [data, setData] = useState([]);
+   const [bounds, setBounds] = useState(null);
 
    useEffect(() => {
       const fetchData = async () => {
@@ -22,6 +23,17 @@ export default function Map(props) {
          .filter(hike => hike.coordinates.lat && hike.coordinates.lon) // Filter for hikes with valid coordinates
          .filter(hike => hike.length.split(" ")[0] != 0); // Filter for hikes with non-zero lengths
       const lengthFiltered = valid.filter(hike => hike.length.split(" ")[0] <= maxLength); // User's max length filter
+      
+      if (bounds !== null) {
+         const boundsFiltered = lengthFiltered.filter(hike =>
+            hike.coordinates.lat >= bounds._southWest.lat &&
+            hike.coordinates.lat <= bounds._northEast.lat &&
+            hike.coordinates.lon >= bounds._southWest.lng &&
+            hike.coordinates.lon <= bounds._northEast.lng
+         );
+         return boundsFiltered;
+      }
+
       const itemsWithId = lengthFiltered.map((item, index) => {
          return { ...item, id: index };
       })
@@ -32,6 +44,11 @@ export default function Map(props) {
       event.preventDefault();
       const maxLengthInput = document.getElementById('max-length').value;
       setMaxLength(parseInt(maxLengthInput));
+   };
+
+   const handleBoundsChanged = (newBounds) => {
+      setBounds(newBounds);
+      console.log(newBounds);
    };
 
    return (
@@ -50,7 +67,7 @@ export default function Map(props) {
                </select>
                <input id="submit" type="submit" value="Search"></input>
             </form>
-            <MainMap center={[47.2326, -120.8472]} zoom={7} maxLength={maxLength} data={filteredData(data)} />
+            <MainMap center={[47.2326, -120.8472]} zoom={7} maxLength={maxLength} data={filteredData(data)} onBoundsChanged={handleBoundsChanged} />
             <h2>Trails</h2>
             <div className="container">
                {filteredData(data).map(item => {
