@@ -11,7 +11,6 @@ export default function MainMap(props) {
       useEffect(() => {
          props.onBoundsChanged(bounds);
       }, [bounds, props.onBoundsChanged]);
-      console.log(bounds);
       return null;
    }
 

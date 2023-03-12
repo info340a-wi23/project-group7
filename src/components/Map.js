@@ -48,7 +48,6 @@ export default function Map(props) {
 
    const handleBoundsChanged = (newBounds) => {
       setBounds(newBounds);
-      console.log(newBounds);
    };
 
    return (
