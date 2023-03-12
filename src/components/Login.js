@@ -1,10 +1,55 @@
-import React from 'react';
+import React, { useState } from "react";
 import Nav from './Nav.js';
 import Footer from './Footer.js';
 
-export default function Login(props) {
-   return (
+export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    if (!username || !password) {
+      setErrorMessage("Incomplete login");
+    } else if (username !== "correctUsername" || password !== "correctPassword") {
+      setErrorMessage("Please provide a valid password");
+    } else {
+      console.log("Login successful");
+    }
+  };
+
+  return (
       <div>
+         <Nav />
+         <main>
+            <form onSubmit={handleSubmit}>
+               <label>
+               Username:
+               <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+               />
+               </label>
+               <br />
+               <label>
+               Password:
+               <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+               />
+               </label>
+               <br />
+               <button type="submit">Submit</button>
+               {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
+            </form>
+         </main>
+         <Footer />
+      </div>
+      );
+}
+      /*<div>
          <Nav />
          <main>
             <div className="container">
@@ -33,6 +78,4 @@ export default function Login(props) {
          </main>
          <script src='./LoginFormReader.js'></script>
          <Footer />
-      </div>
-   );
-}
+      </div>*/
