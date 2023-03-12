@@ -73,7 +73,7 @@ footer {
    color: antiquewhite;
    text-align: center;
    text-decoration: none;
-   padding: 1rem 1.5rem 0.8rem 1.5rem;
+   padding: 1rem 1rem 0.8rem 1rem;
    font-size: 1.125rem;
 }
 
@@ -345,6 +345,16 @@ a {
       height: 500px;
       overflow: hidden;
       z-index: 0;
+   }
+
+   .topnav a {
+      float: left;
+      display: block;
+      color: antiquewhite;
+      text-align: center;
+      text-decoration: none;
+      padding: 1rem 1.5rem 0.8rem 1.5rem;
+      font-size: 1.125rem;
    }
 }
 
