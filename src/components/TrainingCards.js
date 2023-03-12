@@ -2,81 +2,69 @@ import React from 'react';
 
 export function TrainingCards(props) {
 
-    // Create the HTML elements using JavaScript
-    const container = document.createElement("div");
-    container.className = "container";
+    return (
+        <div className="container">
+            <div className="row mx-auto">
+                <div className="col-md-6 col-xl-3 d-flex mx-auto">
+                    <div className="card mb-4">
+                        <div className="card-body">
+                            <div class="row">
+                                <div className="col-sm-auto col-xl-12">
+                                    <img className="pb-3 mx-auto d-block" src="img/hiking.jpeg" alt="hiking"></img>
+                                </div>
+                                <div className="col-sm">
+                                    <h2 className="card-title">Training Programs</h2>
+                                    <div className="col text-center">
+                                        <a className="btn btn-dark" href="beginner.html">Learn More</a>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    const row = document.createElement("div");
-    row.className = "row mx-auto";
+            <div className="row mx-auto">
+                <div className="col-md-6 col-xl-3 d-flex mx-auto">
+                    <div className="card mb-4">
+                        <div className="card-body">
+                            <div class="row">
+                                <div className="col-sm-auto col-xl-12">
+                                    <img className="pb-3 mx-auto d-block" src="img/training.jpeg" alt="training"></img>
+                                </div>
+                                <div className="col-sm">
+                                    <h2 className="card-title">Exercise Videos</h2>
+                                    <div className="col text-center">
+                                        <a className="btn btn-dark" href="#">Learn More</a>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    const card1 = createCard("img/hiking.jpeg", "Training Programs", "beginner.html");
-    const card2 = createCard("img/training.jpeg", "Exercise Videos", "#");
-    const card3 = createCard("img/equipment.jpeg", "Equipment Guide", "#");
-
-    // Helper function to create a card element
-    function createCard(imgSrc, title, linkHref) {
-        const col = document.createElement("div");
-        col.className = "col-md-6 col-xl-3 d-flex mx-auto";
-
-        const card = document.createElement("div");
-        card.className = "card mb-4";
-
-        const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
-
-        const cardRow = document.createElement("div");
-        cardRow.className = "row";
-
-        const imgCol = document.createElement("div");
-        imgCol.className = "col-sm-auto col-xl-12";
-
-        const img = document.createElement("img");
-        img.className = "pb-3 mx-auto d-block";
-        img.src = imgSrc;
-        img.alt = title;
-
-        const titleCol = document.createElement("div");
-        titleCol.className = "col-sm";
-
-        const cardTitle = document.createElement("h2");
-        cardTitle.className = "card-title";
-        cardTitle.textContent = title;
-
-        const linkCol = document.createElement("div");
-        linkCol.className = "col text-center";
-
-        const link = document.createElement("a");
-        link.className = "btn btn-dark";
-        link.href = linkHref;
-        link.textContent = "Learn More";
-
-        // Add the HTML elements to the document tree
-        imgCol.appendChild(img);
-        titleCol.appendChild(cardTitle);
-        linkCol.appendChild(link);
-
-        cardRow.appendChild(imgCol);
-        cardRow.appendChild(titleCol);
-        cardRow.appendChild(linkCol);
-
-        cardBody.appendChild(cardRow);
-
-        card.appendChild(cardBody);
-
-        col.appendChild(card);
-
-        return col;
-    }
-
-    // Add the cards to the row element
-    row.appendChild(card1);
-    row.appendChild(card2);
-    row.appendChild(card3);
-
-    // Add the row element to the container element
-    container.appendChild(row);
-
-    // Add the container element to the document body
-    document.body.appendChild(container);
+            <div className="row mx-auto">
+                <div className="col-md-6 col-xl-3 d-flex mx-auto">
+                    <div className="card mb-4">
+                        <div className="card-body">
+                            <div class="row">
+                                <div className="col-sm-auto col-xl-12">
+                                    <img className="pb-3 mx-auto d-block" src="img/equipment.jpeg" alt="equipment"></img>
+                                </div>
+                                <div className="col-sm">
+                                    <h2 className="card-title">Equipment Guide</h2>
+                                    <div className="col text-center">
+                                        <a className="btn btn-dark" href="#">Learn More</a>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    )
 
 }
