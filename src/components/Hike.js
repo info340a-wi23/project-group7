@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from './Nav.js';
 import HikeDesc from './HikeDesc.js';
 import HikeMap from './HikeMap.js';
 import QAForum from './QAForum.js';
@@ -46,7 +45,6 @@ export default function Hike(props) {
    const url = data.url.split("/")[data.url.split("/").length - 1];
    return (
       <div>
-         <Nav />
          <main>
             <HikeDesc data={data} />
             <HikeMap coords={[data.coordinates.lat, data.coordinates.lon]} name={data.name} />

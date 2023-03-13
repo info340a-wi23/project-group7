@@ -6,6 +6,7 @@ import Training from './Training.js';
 import Login from './Login.js';
 import Hike from './Hike.js';
 import NotFound from './NotFound.js';
+import Nav from './Nav.js';
 
 function getDiffCat(diff) {
    if (diff <= 0.005) {
@@ -23,6 +24,7 @@ function getDiffCat(diff) {
 
 export default function App() {
    const [data, setData] = useState([]);
+   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
    useEffect(() => {
       fetch('/data/wta-parks-data.json')
@@ -48,11 +50,12 @@ export default function App() {
 
    return (
       <div>
+         <Nav isLoggedIn={isLoggedIn}/>
          <Routes>
             <Route path={'/'} element={<Homepage />} />
             <Route path={'/map'} element={<Map data={itemsWithDifficulties}/>} />
             <Route path={'/training'} element={<Training />} />
-            <Route path={'/login'} element={<Login />} />
+            <Route path={'/login'} element={<Login loggedIn={setIsLoggedIn}/>} />
             {itemsWithDifficulties.map(item => (
                <Route key={item.index} path={`/map/${item.url.split("/")[item.url.split("/").length - 1]}`} element={<Hike data={item} />} />
             ))}

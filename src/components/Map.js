@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Nav from './Nav.js';
 import MainMap from './MainMap.js';
 import Footer from './Footer.js';
 
@@ -68,7 +67,6 @@ export default function Map(props) {
 
    return (
       <div>
-         <Nav />
          <main>
             <h1 className="title">Trail Finder</h1>
             <form id="map-filter" onSubmit={handleSubmit}>

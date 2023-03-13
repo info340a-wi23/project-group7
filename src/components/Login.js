@@ -1,36 +1,40 @@
-import React, { useState } from "react";
-import Nav from './Nav.js';
+import React, { useState, useEffect } from "react";
 import Footer from './Footer.js';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
 
+  useEffect(() => {
+    props.loggedIn(false);
+  }, [props.loggedIn]);
+
   const handleSubmit = (e) => {
     e.preventDefault(); 
     if (!username || !password) {
       setErrorMessage("Incomplete login");
-    } else if (username === "correctUsername" || password === "correctPassword") {
+    } else if (username === "correctUsername" && password === "correctPassword") {
       setLoggedIn(true);
+      props.loggedIn(true);
       setErrorMessage("");
     } else {
-      setErrorMessage("Please provide a valid password");
+      setErrorMessage("Please provide valid credentials");
     }
   };
 
   const handleLogout = () => {
    setLoggedIn(false);
+   props.loggedIn(false);
    setUsername('');
    setPassword('');
  }
 
   return (
       <div>
-         <Nav />
-         <h1 className="title">Welcome to Trailblazer!</h1>
+         <h1 className="title">Welcome to TrailBlazer!</h1>
             {loggedIn ?
                <div>
                   <h5>Welcome back! Please choose a page to visit:</h5>
