@@ -4,16 +4,18 @@ import { useMap } from 'react-leaflet/hooks';
 import 'leaflet/dist/leaflet.css';
 import Markers from './Markers.js';
 
-export default function MainMap(props) {
-   function MapBounds() {
-      const map = useMap();
-      const bounds = map.getBounds();
-      useEffect(() => {
-         props.onBoundsChanged(bounds);
-      }, [bounds, props.onBoundsChanged]);
-      return null;
-   }
+function MapBounds(props) {
+   const map = useMap();
 
+   useEffect(() => {
+      const bounds = map.getBounds();
+      props.onBoundsChanged(bounds);
+   }, [map, props.onBoundsChanged]);
+
+   return null;
+}
+
+export default function MainMap(props) {
    return (
       <div id="map">
          <MapContainer center={props.center} zoom={props.zoom} scrollWheelZoom={true} minZoom={7} maxZoom={16}>

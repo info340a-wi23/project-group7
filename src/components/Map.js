@@ -5,7 +5,7 @@ import MainMap from './MainMap.js';
 import Footer from './Footer.js';
 
 export default function Map(props) {
-   const [maxLength, setMaxLength] = useState(100);
+   const [maxLength, setMaxLength] = useState(200);
    const [data, setData] = useState([]);
    const [bounds, setBounds] = useState(null);
 
@@ -23,21 +23,21 @@ export default function Map(props) {
          .filter(hike => hike.coordinates.lat && hike.coordinates.lon) // Filter for hikes with valid coordinates
          .filter(hike => hike.length.split(" ")[0] != 0); // Filter for hikes with non-zero lengths
       const lengthFiltered = valid.filter(hike => hike.length.split(" ")[0] <= maxLength); // User's max length filter
-      
+      const itemsWithId = lengthFiltered.map((item, index) => {
+         return { ...item, id: index };
+      })
+
       if (bounds !== null) {
-         const boundsFiltered = lengthFiltered.filter(hike =>
+         const boundsFiltered = itemsWithId.filter(hike =>
             hike.coordinates.lat >= bounds._southWest.lat &&
             hike.coordinates.lat <= bounds._northEast.lat &&
             hike.coordinates.lon >= bounds._southWest.lng &&
             hike.coordinates.lon <= bounds._northEast.lng
          );
          return boundsFiltered;
+      } else {
+         return itemsWithId;
       }
-
-      const itemsWithId = lengthFiltered.map((item, index) => {
-         return { ...item, id: index };
-      })
-      return itemsWithId;
    }
 
    const handleSubmit = (event) => {
@@ -74,7 +74,7 @@ export default function Map(props) {
                      <div className="row trail-card" key={item.id}>
                         <div className="col col-12">
                            <div className="card map-list">
-                              <h5 className="card-title"><Link to='pacific-crest-trail-section-j'>{item.name}</Link></h5>
+                              <h5 className="card-title"><Link to={item.url.split("/")[item.url.split("/").length - 1]}>{item.name}</Link></h5>
                               <h6 className="card-subtitle">Length: {item.length}</h6>
                               <p>Features: {item.features.map(feature => feature).join(' \u2022 ')}</p>
                            </div>
