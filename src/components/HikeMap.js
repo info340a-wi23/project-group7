@@ -19,7 +19,9 @@ export default function HikeMap(props) {
             url="https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}"
             maxZoom={16}
             />
-            <Marker position={props.coords} icon={customIcon} />
+            <Marker position={props.coords} icon={customIcon}>
+               <Popup>{props.name}</Popup>
+            </Marker>
          </MapContainer>
       </div>
    )
