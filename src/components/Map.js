@@ -45,7 +45,8 @@ export default function Map(props) {
       });
 
       const itemsWithDifficulties = itemsWithId.map((item) => {
-         const diff = item.elevation.Gain.slice(0, -4) / (item.length.split(" ")[0] * 5280);
+         let diff = item.elevation.Gain.slice(0, -4) / (item.length.split(" ")[0] * 5280);
+         diff = (diff + item.length.split(" ")[0] / 250) / 2;
          const diffCat = getDiffCat(diff);
          return { ...item, diff, diffCat };
       });
@@ -121,7 +122,7 @@ export default function Map(props) {
                   </select>
                </div>
                <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
-                  <label htmlFor="name">Hike Name:</label>
+                  <label htmlFor="name">Name:</label>
                   <input type="text" id="name" name="name" placeholder="Name..." />
                </div>
                <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
