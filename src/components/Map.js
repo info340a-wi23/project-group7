@@ -5,8 +5,9 @@ import MainMap from './MainMap.js';
 import Footer from './Footer.js';
 
 export default function Map(props) {
-   const [maxLength, setMaxLength] = useState(100);
+   const [maxLength, setMaxLength] = useState(200);
    const [data, setData] = useState([]);
+   const [bounds, setBounds] = useState(null);
 
    useEffect(() => {
       const fetchData = async () => {
@@ -25,13 +26,28 @@ export default function Map(props) {
       const itemsWithId = lengthFiltered.map((item, index) => {
          return { ...item, id: index };
       })
-      return itemsWithId;
+
+      if (bounds !== null) {
+         const boundsFiltered = itemsWithId.filter(hike =>
+            hike.coordinates.lat >= bounds._southWest.lat &&
+            hike.coordinates.lat <= bounds._northEast.lat &&
+            hike.coordinates.lon >= bounds._southWest.lng &&
+            hike.coordinates.lon <= bounds._northEast.lng
+         );
+         return boundsFiltered;
+      } else {
+         return itemsWithId;
+      }
    }
 
    const handleSubmit = (event) => {
       event.preventDefault();
       const maxLengthInput = document.getElementById('max-length').value;
       setMaxLength(parseInt(maxLengthInput));
+   };
+
+   const handleBoundsChanged = (newBounds) => {
+      setBounds(newBounds);
    };
 
    return (
@@ -50,7 +66,7 @@ export default function Map(props) {
                </select>
                <input id="submit" type="submit" value="Search"></input>
             </form>
-            <MainMap center={[47.2326, -120.8472]} zoom={7} maxLength={maxLength} data={filteredData(data)} />
+            <MainMap center={[47.2326, -120.8472]} zoom={7} maxLength={maxLength} data={filteredData(data)} onBoundsChanged={handleBoundsChanged} />
             <h2>Trails</h2>
             <div className="container">
                {filteredData(data).map(item => {
@@ -58,7 +74,7 @@ export default function Map(props) {
                      <div className="row trail-card" key={item.id}>
                         <div className="col col-12">
                            <div className="card map-list">
-                              <h5 className="card-title"><Link to='pacific-crest-trail-section-j'>{item.name}</Link></h5>
+                              <h5 className="card-title"><Link to={item.url.split("/")[item.url.split("/").length - 1]}>{item.name}</Link></h5>
                               <h6 className="card-subtitle">Length: {item.length}</h6>
                               <p>Features: {item.features.map(feature => feature).join(' \u2022 ')}</p>
                            </div>

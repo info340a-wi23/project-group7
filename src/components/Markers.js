@@ -17,7 +17,7 @@ export default function Markers(props) {
          {data.map(item => (
             <Marker position={[item.coordinates.lat, item.coordinates.lon]} icon={customIcon} key={item.id}>
                <Popup>
-                  <Link to="/pacific-crest-trail-section-j">{item.name}</Link>
+                  <Link to={item.url.split("/")[item.url.split("/").length - 1]}>{item.name}</Link>
                </Popup>
             </Marker>
          ))}
