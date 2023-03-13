@@ -6,6 +6,7 @@ import Training from './Training.js';
 import Login from './Login.js';
 import Hike from './Hike.js';
 import NotFound from './NotFound.js';
+import BeginnerPage from './Beginner.js';
 
 function getDiffCat(diff) {
    if (diff <= 0.005) {
@@ -52,6 +53,7 @@ export default function App() {
             <Route path={'/'} element={<Homepage />} />
             <Route path={'/map'} element={<Map data={itemsWithDifficulties}/>} />
             <Route path={'/training'} element={<Training />} />
+            <Route path={'/beginner'} element={<BeginnerPage />} />
             <Route path={'/login'} element={<Login />} />
             {itemsWithDifficulties.map(item => (
                <Route key={item.index} path={`/map/${item.url.split("/")[item.url.split("/").length - 1]}`} element={<Hike data={item} />} />
