@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function QAForum(props) {
    return (
@@ -14,7 +15,7 @@ export default function QAForum(props) {
                               <img className="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile" />
                            </div>
                            <div className="col col-9 post-info">
-                              <h5 className="card-title"><a href="sketchb02.html">@sketchb02</a></h5>
+                              <h5 className="card-title"><Link to="/sketchb02">@sketchb02</Link></h5>
                               <h6 className="card-subtitle">May 26, 2022</h6>
                            </div>
                         </div>
@@ -33,7 +34,7 @@ export default function QAForum(props) {
                               <img className="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile" />
                            </div>
                            <div className="col col-9 post-info">
-                              <h5 className="card-title"><a href="seang.html">@seang</a></h5>
+                              <h5 className="card-title"><Link to="/seang">@seang</Link></h5>
                               <h6 className="card-subtitle">May 29, 2022</h6>
                            </div>
                         </div>
@@ -56,7 +57,7 @@ export default function QAForum(props) {
                               <img className="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile" />
                            </div>
                            <div className="col col-9 post-info">
-                              <h5 className="card-title"><a href="darthur42.html">@darthur42</a></h5>
+                              <h5 className="card-title"><Link to="/darthur42">@darthur42</Link></h5>
                               <h6 className="card-subtitle">March 30, 2022</h6>
                            </div>
                         </div>
@@ -75,7 +76,7 @@ export default function QAForum(props) {
                               <img className="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile" />
                            </div>
                            <div className="col col-9 post-info">
-                              <h5 className="card-title"><a href="seang.html">@seang</a></h5>
+                              <h5 className="card-title"><Link to="/seang">@seang</Link></h5>
                               <h6 className="card-subtitle">April 04, 2022</h6>
                            </div>
                         </div>

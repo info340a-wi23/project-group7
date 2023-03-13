@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function UserReports(props) {
    return (
@@ -14,7 +15,7 @@ export default function UserReports(props) {
                               <img className="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile" />
                            </div>
                            <div className="col col-9 post-info">
-                              <h5 className="card-title"><a href="sketchb02.html">@sketchb02</a></h5>
+                              <h5 className="card-title"><Link to="/sketchb02">@sketchb02</Link></h5>
                               <h6 className="card-subtitle">June 26, 2022</h6>
                            </div>
                         </div>

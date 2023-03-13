@@ -115,6 +115,7 @@ export default function Map(props) {
                         );
                      })}
                   </div>
+                  <p style={{ textAlign: "center" }}>Don't see a hike you're looking for? <Link to={'/'}>Let us know!</Link></p>
                   <p style={{ textAlign: "center" }}>Data retrieved from Nicholas Hassell's WTA-scraped <a href="https://data.world/nick-hassell/washington-state-hiking-trails">database</a>.</p>
                </div>
             )}
