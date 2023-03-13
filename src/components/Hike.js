@@ -11,8 +11,7 @@ TO DO:
 - Make QAForum and UserReports based on a database and have user inputs update the database
 */
 
-export default function PCTSectionJ(props) {
-   console.log(props.data.name);
+export default function Hike(props) {
    return (
       <div>
          <Nav />

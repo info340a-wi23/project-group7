@@ -4,7 +4,7 @@ import Homepage from './Homepage.js';
 import Map from './Map.js';
 import Training from './Training.js';
 import Login from './Login.js';
-import PCTSectionJ from './PCTSectionJ.js';
+import Hike from './Hike.js';
 import NotFound from './NotFound.js';
 
 function getDiffCat(diff) {
@@ -56,7 +56,7 @@ export default function App() {
             <Route path={'/training'} element={<Training />} />
             <Route path={'/login'} element={<Login />} />
             {itemsWithDifficulties.map(item => (
-               <Route key={item.index} path={`/map/${item.url.split("/")[item.url.split("/").length - 1]}`} element={<PCTSectionJ data={item} />} />
+               <Route key={item.index} path={`/map/${item.url.split("/")[item.url.split("/").length - 1]}`} element={<Hike data={item} />} />
             ))}
             <Route path={'*'} element={<NotFound />}/>
          </Routes>
