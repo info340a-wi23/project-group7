@@ -329,8 +329,14 @@ a {
    width: 100%;
 }
 
- .button {
+.button {
    width: 50%;
+}
+
+/*Login*/
+.formLabel {
+   font-size: 18px;
+   margin-bottom: 15px;
 }
 
 @media (min-width: 480px) {
