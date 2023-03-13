@@ -115,6 +115,7 @@ export default function Map(props) {
                         );
                      })}
                   </div>
+                  <p style={{ textAlign: "center" }}>Data retrieved from Nicholas Hassell's WTA-scraped <a href="https://data.world/nick-hassell/washington-state-hiking-trails">database</a>.</p>
                </div>
             )}
          </main>

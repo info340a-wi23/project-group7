@@ -25,13 +25,11 @@ export default function App() {
    const [data, setData] = useState([]);
 
    useEffect(() => {
-      const fetchData = async () => {
-         const response = await fetch('/data/wta-parks-data.json');
-         const jsonData = await response.json();
-         setData(jsonData);
-       };
-      fetchData();
-   }, []);
+      fetch('/data/wta-parks-data.json')
+         .then(response => response.json())
+         .then(jsonData => setData(jsonData))
+         .catch(error => console.error(error));
+    }, []);
 
    const valid = data
          .filter(hike => hike.coordinates.lat && hike.coordinates.lon) // Filter for hikes with valid coordinates
