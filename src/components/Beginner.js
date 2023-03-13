@@ -1,9 +1,13 @@
 import React from 'react';
+import Nav from './Nav.js';
+import Footer from './Footer.js';
 
-export function BeginnerPage(props) {
+
+export default function BeginnerPage(props) {
 
     return (
         <div>
+            <Nav/>
             <h1 class="title">TrailBlazer 8 Week Beginner Training Program</h1>
             <div className="container">
                 <div className="row">
@@ -43,6 +47,7 @@ export function BeginnerPage(props) {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

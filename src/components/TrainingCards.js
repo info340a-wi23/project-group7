@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export function TrainingCards(props) {
 
@@ -15,7 +16,7 @@ export function TrainingCards(props) {
                                 <div className="col-sm">
                                     <h2 className="card-title">Training Programs</h2>
                                     <div className="col text-center">
-                                        <a className="btn btn-dark" href="beginner.html">Learn More</a>
+                                        <Link className="btn btn-dark" to="/beginner">Learn More</Link>
                                      </div>
                                 </div>
                             </div>
@@ -35,7 +36,7 @@ export function TrainingCards(props) {
                                 <div className="col-sm">
                                     <h2 className="card-title">Exercise Videos</h2>
                                     <div className="col text-center">
-                                        <a className="btn btn-dark" href="#">Learn More</a>
+                                        <Link className="btn btn-dark" to="/beginner">Learn More</Link>
                                      </div>
                                 </div>
                             </div>
@@ -55,7 +56,7 @@ export function TrainingCards(props) {
                                 <div className="col-sm">
                                     <h2 className="card-title">Equipment Guide</h2>
                                     <div className="col text-center">
-                                        <a className="btn btn-dark" href="#">Learn More</a>
+                                        <Link className="btn btn-dark" to="/beginner">Learn More</Link>
                                      </div>
                                 </div>
                             </div>
