@@ -30,27 +30,32 @@ export default function Login() {
   return (
       <div>
          <Nav />
-         <h1 className="title">Welcome to Trailblazer!</h1>
+         <h1 className="title">Welcome to Trailblazer</h1>
             {loggedIn ?
                <div>
                   <h5>Welcome back! Please choose a page to visit:</h5>
                   <h5><Link to="/">Home</Link> <Link to="/map">Map</Link> <Link to="/training">Training</Link></h5>
-                  <button className="btn btn-success" onClick={handleLogout}>Log out</button>
+                  <div className="text-center">
+                     <button className="btn btn-success" onClick={handleLogout} >Log out</button>
+                  </div>
                </div> :
-               <form id="map-filter" onSubmit={handleSubmit}>
-                  <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
-                     <label>Username: </label>
-                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                  </div>
+               <div>
+                  <h5>Join Our Hiking Community by Logging In!</h5>
+                  <form id="map-filter" onSubmit={handleSubmit}>
+                     <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
+                        <label>Username: </label>
+                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                     </div>
 
-                  <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
-                     <label>Password: </label>
-                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                  </div>
+                     <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
+                        <label>Password: </label>
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                     </div>
 
-                  <button type="submit" className="btn btn-success">Log In</button>
-                  {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
-               </form>
+                     <button type="submit" className="btn btn-success">Log In</button>
+                     {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
+                  </form>
+               </div>
             }
          
          <Footer />
