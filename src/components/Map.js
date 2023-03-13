@@ -4,8 +4,23 @@ import Nav from './Nav.js';
 import MainMap from './MainMap.js';
 import Footer from './Footer.js';
 
+function getDiffCat(diff) {
+   if (diff <= 0.005) {
+     return "Very Easy";
+   } else if (diff <= 0.02) {
+     return "Easy";
+   } else if (diff <= 0.035) {
+     return "Medium";
+   } else if (diff <= 0.05) {
+     return "Hard";
+   } else {
+     return "Very Hard";
+   }
+ }
+
 export default function Map(props) {
    const [maxLength, setMaxLength] = useState(200);
+   const [diff, setDiff] = useState("Very Easy");
    const [data, setData] = useState([]);
    const [bounds, setBounds] = useState(null);
 
@@ -21,14 +36,21 @@ export default function Map(props) {
    const filteredData = (hikes) => {
       const valid = hikes
          .filter(hike => hike.coordinates.lat && hike.coordinates.lon) // Filter for hikes with valid coordinates
-         .filter(hike => hike.length.split(" ")[0] != 0); // Filter for hikes with non-zero lengths
-      const lengthFiltered = valid.filter(hike => hike.length.split(" ")[0] <= maxLength); // User's max length filter
-      const itemsWithId = lengthFiltered.map((item, index) => {
+         .filter(hike => hike.length.split(" ")[0] != 0) // Filter for hikes with non-zero lengths
+         .filter(hike => hike.elevation.Gain);
+         const itemsWithId = valid.map((item, index) => {
          return { ...item, id: index };
-      })
+      });
+      const itemsWithDifficulties = itemsWithId.map((item) => {
+         const diff = item.elevation.Gain.slice(0, -4) / (item.length.split(" ")[0] * 5280);
+         const diffCat = getDiffCat(diff);
+         return { ...item, diff, diffCat };
+      });
+      const lengthFiltered = itemsWithDifficulties.filter(hike => hike.length.split(" ")[0] <= maxLength); // User's max length filter
+      const diffFiltered = lengthFiltered.filter(hike => hike.diffCat === diff); // User's difficulty filter
 
       if (bounds !== null) {
-         const boundsFiltered = itemsWithId.filter(hike =>
+         const boundsFiltered = diffFiltered.filter(hike =>
             hike.coordinates.lat >= bounds._southWest.lat &&
             hike.coordinates.lat <= bounds._northEast.lat &&
             hike.coordinates.lon >= bounds._southWest.lng &&
@@ -36,7 +58,7 @@ export default function Map(props) {
          );
          return boundsFiltered;
       } else {
-         return itemsWithId;
+         return lengthFiltered;
       }
    }
 
@@ -44,6 +66,9 @@ export default function Map(props) {
       event.preventDefault();
       const maxLengthInput = document.getElementById('max-length').value;
       setMaxLength(parseInt(maxLengthInput));
+      const diffInput = document.getElementById('diff').value.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+      setDiff(diffInput);
+      console.log(diffInput);
    };
 
    const handleBoundsChanged = (newBounds) => {
@@ -60,9 +85,11 @@ export default function Map(props) {
                <input type="text" id="max-length" name="max-length" placeholder="Max length (mi)..." />
                <label htmlFor="diff">Difficulty:</label>
                <select type="diff" id="diff" name="diff">
+                  <option value="very-easy">Very Easy</option>
                   <option value="easy">Easy</option>
-                  <option value="med">Medium</option>
+                  <option value="medium">Medium</option>
                   <option value="hard">Hard</option>
+                  <option value="very-hard">Very Hard</option>
                </select>
                <input id="submit" type="submit" value="Search"></input>
             </form>
@@ -75,8 +102,9 @@ export default function Map(props) {
                         <div className="col col-12">
                            <div className="card map-list">
                               <h5 className="card-title"><Link to={item.url.split("/")[item.url.split("/").length - 1]}>{item.name}</Link></h5>
-                              <h6 className="card-subtitle">Length: {item.length}</h6>
-                              <p>Features: {item.features.map(feature => feature).join(' \u2022 ')}</p>
+                              <h6 className="card-subtitle">Length: {item.length} {' \u2022 '} Difficulty: {item.diffCat}</h6>
+                              <p><strong>Elevation Gain:</strong> {item.elevation.Gain}</p>
+                              <p><strong>Features:</strong> {item.features.map(feature => feature).join(' \u2022 ')}</p>
                            </div>
                         </div>
                      </div>
