@@ -38,7 +38,7 @@ export default function Map(props) {
    const filteredData = (hikes) => {
       const valid = hikes
          .filter(hike => hike.coordinates.lat && hike.coordinates.lon) // Filter for hikes with valid coordinates
-         .filter(hike => hike.length.split(" ")[0] != 0) // Filter for hikes with non-zero lengths
+         .filter(hike => hike.length.split(" ")[0] !== 0) // Filter for hikes with non-zero lengths
          .filter(hike => hike.elevation.Gain);
          const itemsWithId = valid.map((item, index) => {
          return { ...item, id: index };

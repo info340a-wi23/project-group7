@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 /*
 TO DO:
 - Make difficulty level reliant on dataset
-- Make hike description either a database entry or a user input
+- Make hike description either a database entry or a user input (keep last paragraph!)
 */
 
 export default function HikeDesc(props) {
@@ -41,7 +41,7 @@ export default function HikeDesc(props) {
                      </div>
                      <div className="col col-6 col-lg-3 card">
                         <h5 className="card-title">Difficulty</h5>
-                        <p className="card-text"><a href="training1.html">N/A</a></p>
+                        <p className="card-text"><Link to="training">N/A</Link></p>
                      </div>
                   </div>
                   <div className="col col-12 hike-description">

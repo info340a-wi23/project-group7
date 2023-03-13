@@ -18,7 +18,7 @@ export default function PCTSectionJ(props) {
          <Nav />
          <main>
             <HikeDesc data={props.data} />
-            <HikeMap coords={[props.data.coordinates.lat, props.data.coordinates.lon]} />
+            <HikeMap coords={[props.data.coordinates.lat, props.data.coordinates.lon]} name={props.data.name} />
             <QAForum />
             <UserReports />
          </main>

@@ -10,7 +10,7 @@ function MapBounds(props) {
    useEffect(() => {
       const bounds = map.getBounds();
       props.onBoundsChanged(bounds);
-   }, [map, props.onBoundsChanged]);
+   }, [map, props]);
 
    return null;
 }
