@@ -13,11 +13,7 @@ export default function App(props) {
             <Nav />
             <main>
                 <TrainingHeader />
-                <Routes>
-                    <Route path="/trainingCards" element={<TrainingCards />}>
-                        <Route path=":beginner" element={<BeginnerPage/>}/>
-                    </Route>
-                </Routes>
+                <TrainingCards />
             </main>
             <Footer />
         </div>
