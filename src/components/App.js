@@ -57,7 +57,7 @@ export default function App() {
             <Route path={'/training'} element={<Training />} />
             <Route path={'/login'} element={<Login loggedIn={setIsLoggedIn}/>} />
             {itemsWithDifficulties.map(item => (
-               <Route key={item.index} path={`/map/${item.url.split("/")[item.url.split("/").length - 1]}`} element={<Hike data={item} />} />
+               <Route key={item.index} path={`/map/${item.url.split("/")[item.url.split("/").length - 1]}`} element={<Hike data={item} loggedIn={isLoggedIn} />} />
             ))}
             <Route path={'*'} element={<NotFound />}/>
          </Routes>

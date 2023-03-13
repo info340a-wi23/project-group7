@@ -18,7 +18,7 @@ To Do:
 - Update database to reflect any posts inputted by the user
 
 Notes:
-- This page takes a single prop "data" that contains a single entry from
+- This page takes a prop "data" that contains a single entry from
   the "wta-parks-data.json" file. When making the database containing
   user posts, I'd recommend using the "url" const that I created here
   and passed to QAForum and UserReports as the "key" prop to match up
@@ -32,6 +32,10 @@ Notes:
   forms just having description entries. In theory, the user report
   form would also have an image uploader, but given the amount of time
   we have, I don't think it would make sense to include it.
+- There's also a prop "loggedIn" that gets passed here that stores if
+  the user is logged in or not. You might be able to set up some kind
+  of conditional display for the forms depending on whether that value
+  is true or false.
 - I know we already said this, but feel free to reach out to either of
   us if you have any questions or need help with anything!
 
