@@ -22,6 +22,7 @@ export default function Login() {
       <div>
          <Nav />
          <main>
+            <h1 className="title">Login</h1>
             <form onSubmit={handleSubmit}>
                <label>
                Username:
