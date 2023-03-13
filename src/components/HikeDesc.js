@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+/*
+TO DO:
+- Make difficulty level reliant on dataset
+- Make hike description either a database entry or a user input
+*/
+
 export default function HikeDesc(props) {
    return (
       <div>
-         <h1 className="title">Pacific Crest Trail - Section J</h1>
-         <p className="subtitle">Snoqualmie Pass to Stevens Pass</p>
+         <h1 className="title">{props.data.name.split("-")[0]}</h1>
+         <p className="subtitle">{props.data.name.split("-").slice(1).join('-').trim()}</p>
    
          <div className="container">
             <div className="row">
@@ -23,19 +29,19 @@ export default function HikeDesc(props) {
                   <div className="trail-data row justify-content-center">
                      <div className="col col-6 col-lg-3 card">
                         <h5 className="card-title">Length</h5>
-                        <p className="card-text">74.7 mi, one-way</p>
+                        <p className="card-text">{props.data.length}</p>
                      </div>
                      <div className="col col-6 col-lg-3 card">
                         <h5 className="card-title">Elevation Gain</h5>
-                        <p className="card-text">16,000 ft</p>
+                        <p className="card-text">{props.data.elevation.Gain}</p>
                      </div>
                      <div className="col col-6 col-lg-3 card">
                         <h5 className="card-title">Highest Point</h5>
-                        <p className="card-text">5,988 ft</p>
+                        <p className="card-text">{props.data.elevation["Highest Point"]}</p>
                      </div>
                      <div className="col col-6 col-lg-3 card">
                         <h5 className="card-title">Difficulty</h5>
-                        <p className="card-text"><a href="training1.html">Very Hard</a></p>
+                        <p className="card-text"><a href="training1.html">N/A</a></p>
                      </div>
                   </div>
                   <div className="col col-12 hike-description">

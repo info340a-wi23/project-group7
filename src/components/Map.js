@@ -4,6 +4,11 @@ import Nav from './Nav.js';
 import MainMap from './MainMap.js';
 import Footer from './Footer.js';
 
+/*
+TO DO:
+- Move difficulty calculation to App.js
+*/
+
 function getDiffCat(diff) {
    if (diff <= 0.005) {
      return "Very Easy";
@@ -11,29 +16,24 @@ function getDiffCat(diff) {
      return "Easy";
    } else if (diff <= 0.035) {
      return "Medium";
-   } else if (diff <= 0.05) {
+   } else if (diff <= 0.06) {
      return "Hard";
    } else {
      return "Very Hard";
    }
- }
+}
 
 export default function Map(props) {
    const [maxLength, setMaxLength] = useState(200);
    const [diff, setDiff] = useState("Any");
    const [name, setName] = useState("");
-   const [data, setData] = useState([]);
+   const [data, setData] = useState(props.data);
    const [bounds, setBounds] = useState(null);
    const [searchClicked, setSearchClicked] = useState(false);
 
    useEffect(() => {
-      const fetchData = async () => {
-         const response = await fetch('/data/wta-parks-data.json');
-         const jsonData = await response.json();
-         setData(jsonData);
-       };
-      fetchData();
-   }, []);
+      setData(props.data);
+   }, [props.data]);
 
    const filteredData = (hikes) => {
       const valid = hikes
@@ -139,7 +139,7 @@ export default function Map(props) {
                            <div className="row trail-card" key={item.id}>
                               <div className="col col-12">
                                  <div className="card map-list">
-                                    <h5 className="card-title"><Link to={item.url.split("/")[item.url.split("/").length - 1]}>{item.name}</Link></h5>
+                                    <h5 className="card-title"><Link to={`/map/${item.url.split("/")[item.url.split("/").length - 1]}`}>{item.name}</Link></h5>
                                     <h6 className="card-subtitle">Length: {item.length} {' \u2022 '} Difficulty: {item.diffCat}</h6>
                                     <p><strong>Elevation Gain:</strong> {item.elevation.Gain}</p>
                                     <p><strong>Features:</strong> {item.features.map(feature => feature).join(' \u2022 ')}</p>
