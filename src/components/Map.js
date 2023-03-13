@@ -105,20 +105,28 @@ export default function Map(props) {
          <main>
             <h1 className="title">Trail Finder</h1>
             <form id="map-filter" onSubmit={handleSubmit}>
-               <label htmlFor="max-length">Max Length (mi):</label>
-               <input type="text" id="max-length" name="max-length" placeholder="Max length (mi)..." />
-               <label htmlFor="diff">Difficulty:</label>
-               <select type="diff" id="diff" name="diff">
-                  <option value="any">Any</option>
-                  <option value="very-easy">Very Easy</option>
-                  <option value="easy">Easy</option>
-                  <option value="medium">Medium</option>
-                  <option value="hard">Hard</option>
-                  <option value="very-hard">Very Hard</option>
-               </select>
-               <label htmlFor="name">Hike Name:</label>
-               <input type="text" id="name" name="name" placeholder="Name..." />
-               <input id="submit" type="submit" value="Search" />
+               <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
+                  <label htmlFor="max-length">Max Length (mi):</label>
+                  <input type="text" id="max-length" name="max-length" placeholder="Max length (mi)..." />
+               </div>
+               <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
+                  <label htmlFor="diff">Difficulty:</label>
+                  <select type="diff" id="diff" name="diff">
+                     <option value="any">Any</option>
+                     <option value="very-easy">Very Easy</option>
+                     <option value="easy">Easy</option>
+                     <option value="medium">Medium</option>
+                     <option value="hard">Hard</option>
+                     <option value="very-hard">Very Hard</option>
+                  </select>
+               </div>
+               <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
+                  <label htmlFor="name">Hike Name:</label>
+                  <input type="text" id="name" name="name" placeholder="Name..." />
+               </div>
+               <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
+                  <input id="submit" type="submit" value="Search" />
+               </div>
             </form>
             <MainMap center={[47.2326, -120.8472]} zoom={7} maxLength={maxLength} data={filteredData(data)} onBoundsChanged={handleBoundsChanged} />
             {searchClicked && (
