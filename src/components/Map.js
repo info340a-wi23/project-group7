@@ -4,25 +4,6 @@ import Nav from './Nav.js';
 import MainMap from './MainMap.js';
 import Footer from './Footer.js';
 
-/*
-TO DO:
-- Move difficulty calculation to App.js
-*/
-
-function getDiffCat(diff) {
-   if (diff <= 0.005) {
-     return "Very Easy";
-   } else if (diff <= 0.02) {
-     return "Easy";
-   } else if (diff <= 0.035) {
-     return "Medium";
-   } else if (diff <= 0.06) {
-     return "Hard";
-   } else {
-     return "Very Hard";
-   }
-}
-
 export default function Map(props) {
    const [maxLength, setMaxLength] = useState(200);
    const [diff, setDiff] = useState("Any");
@@ -35,28 +16,13 @@ export default function Map(props) {
       setData(props.data);
    }, [props.data]);
 
-   const filteredData = (hikes) => {
-      const valid = hikes
-         .filter(hike => hike.coordinates.lat && hike.coordinates.lon) // Filter for hikes with valid coordinates
-         .filter(hike => hike.length.split(" ")[0] !== 0) // Filter for hikes with non-zero lengths
-         .filter(hike => hike.elevation.Gain);
-         const itemsWithId = valid.map((item, index) => {
-         return { ...item, id: index };
-      });
-
-      const itemsWithDifficulties = itemsWithId.map((item) => {
-         let diff = item.elevation.Gain.slice(0, -4) / (item.length.split(" ")[0] * 5280);
-         diff = (diff + item.length.split(" ")[0] / 250) / 2;
-         const diffCat = getDiffCat(diff);
-         return { ...item, diff, diffCat };
-      });
-      
-      let lengthFiltered = itemsWithDifficulties;
+   const filteredData = (hikes) => {  
+      let lengthFiltered = hikes;
       
       if (maxLength) {
          const maxLengthValue = parseInt(maxLength);
          if (!isNaN(maxLengthValue)) {
-            lengthFiltered = itemsWithDifficulties.filter(hike => hike.length.split(" ")[0] <= maxLength); // User's max length filter
+            lengthFiltered = hikes.filter(hike => hike.length.split(" ")[0] <= maxLength); // User's max length filter
          }
       }
 
