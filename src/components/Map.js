@@ -69,6 +69,7 @@ export default function Map(props) {
       <div>
          <main>
             <h1 className="title">Trail Finder</h1>
+            <p style={{ textAlign: "center", marginTop: "0.5rem", marginBottom: "0rem" }}>Please input search parameters. Any part of the form can be left blank.</p>
             <form className="map-filter" onSubmit={handleSubmit}>
                <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
                   <label htmlFor="max-length">Max Length (mi):</label>

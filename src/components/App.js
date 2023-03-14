@@ -51,6 +51,10 @@ export default function App() {
       return { ...item, diff, diffCat };
    });
 
+   const hikeRoutes = itemsWithDifficulties.map(item => (
+      <Route key={item.index} path={`/map/${item.url.split("/")[item.url.split("/").length - 1]}`} element={<Hike data={item} loggedIn={isLoggedIn} />} />
+   ))
+
    return (
       <div>
          <Nav isLoggedIn={isLoggedIn}/>
@@ -62,9 +66,7 @@ export default function App() {
             <Route path={'/exercise'} element={<ExerciseVids />} />
             <Route path={'/equipment'} element={<Equipment />} />
             <Route path={'/login'} element={<Login loggedIn={setIsLoggedIn}/>} />
-            {itemsWithDifficulties.map(item => (
-               <Route key={item.index} path={`/map/${item.url.split("/")[item.url.split("/").length - 1]}`} element={<Hike data={item} loggedIn={isLoggedIn} />} />
-            ))}
+            {hikeRoutes}
             <Route path={'*'} element={<NotFound />}/>
          </Routes>
       </div>
