@@ -18,16 +18,18 @@ export default function Equipment(props) {
             <h1 className="title">Essential Hiking Equipment Guide</h1>
             <main>
                 <h5>Here are some of the most <i>ESSENTIAL</i> items to bring on your hiking trip!</h5>
-                <ul>
-                    <li>Hiking boots</li>
-                    <li>Backpack</li>
-                    <li>Water bottle</li>
-                    <li>Map and compass</li>
-                    <li>Sunscreen and hat</li>
-                    <li>First aid kit</li>
-                    <li>Flashlight or headlamp</li>                    
-                    <li>Snacks and meals</li>
-                </ul>
+                <div className="d-flex">
+                    <ul className=" mx-auto justify-content-center">
+                        <li>Hiking boots</li>
+                        <li>Backpack</li>
+                        <li>Water bottle</li>
+                        <li>Map and compass</li>
+                        <li>Sunscreen and hat</li>
+                        <li>First aid kit</li>
+                        <li>Flashlight or headlamp</li>                    
+                        <li>Snacks and meals</li>
+                    </ul>
+                </div>
                 <div className="row">
                     {equipmentCards}
                 </div>
@@ -41,7 +43,7 @@ function EquipmentCard(props) {
     let card = props.card;
 
     return (
-        <div className="col-4 flex-grow-1">
+        <div className="col-3 flex-grow-1">
             <div className="card mb-3">
                 <img className="card-img-top" src={'img/' + card.img} alt={props.index} />
                 <div className="card-body">
