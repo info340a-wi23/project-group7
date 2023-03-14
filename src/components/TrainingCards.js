@@ -10,7 +10,7 @@ const cards = [
     {
         title: 'Exercise Videos',
         img: 'training.jpeg',
-        link: 'beginner'
+        link: 'exercise'
     },
     {
         title: 'Equipment Guide',
