@@ -8,7 +8,7 @@ export default function ExerciseVids(props) {
         <div>
             <main>
                 <div className="row justify-content-center">
-                    <div className="col-lg-10">
+                    <div className="title col-lg-9">
                         <img className="img-fluid rounded" src="img/exercise_main.jpeg" alt="Exercising"></img>
                     </div>
                     <h1>Try These Training Exercise Variations!</h1>
@@ -45,6 +45,7 @@ export default function ExerciseVids(props) {
                         </div>
                         <div className="col-md-7 text-center">
                             <Link className="btn btn-success" to={"*"}>Watch example</Link>
+                            <p></p>
                         </div> 
                     </div>
                 </div>
