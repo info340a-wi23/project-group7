@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './Footer.js';
+import {Link} from 'react-router-dom';
 
 export default function ExerciseVids(props) {
 
@@ -30,7 +31,7 @@ export default function ExerciseVids(props) {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-7 text-center">
-                            <img className="img-fluid" src="img/jumpsqt.jpeg" alt="jump" />
+                            <img className="img-fluid rounded" src="img/jumpsqt.jpeg" alt="jump" />
                             <h4>Jump Squats</h4>
                             <p>Squats find their way into many exercise plans because they provide an excellent all-around workout for all of the muscles in the lower body and legs—your body’s hiking engine. Adding a jump helps further develop power in the lower legs.</p>
                         </div>
@@ -42,13 +43,16 @@ export default function ExerciseVids(props) {
                                 <li><b>Do 15-20 times.</b></li>
                             </ol>
                         </div>
+                        <div className="col-md-7 text-center">
+                            <Link className="btn btn-success" to={"*"}>Watch example</Link>
+                        </div> 
                     </div>
                 </div>
 
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-7 text-center">
-                            <img className="img-fluid" src="img/stepup.jpeg" alt="jump" />
+                            <img className="img-fluid rounded" src="img/stepup.jpeg" alt="jump" />
                             <h4>Step Ups</h4>
                             <p>Hiking with a pack on involves a seemingly endless amount of stepping up and over things. This exercise builds strength and endurance in your glutes and quad muscles so you can handle whatever obstacles you’ll encounter along the trail.</p>
                             <p><b>Props: A stable surface, about 8 inches off the ground.</b></p>
@@ -60,6 +64,9 @@ export default function ExerciseVids(props) {
                                 <li>Pause in a balanced position, then step down, returning your left leg and right foot to the starting position.</li>
                                 <li><b>Do this 15 times; then repeat the exercise 15 times on the other side.</b></li>
                             </ol>
+                        </div>
+                        <div className="col-md-7 text-center">
+                            <Link className="btn btn-success" to={"*"}>Watch example</Link>
                         </div>
                     </div>
                 </div>
