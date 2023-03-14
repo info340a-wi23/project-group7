@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './Footer.js';
 
 
-export default function BeginnerPage(props) {
+export default function BeginnerPage() {
 
     return (
         <div>

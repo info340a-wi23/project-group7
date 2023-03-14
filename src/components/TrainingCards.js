@@ -19,7 +19,7 @@ const cards = [
     }
 ];
 
-export function TrainingCards(props) {
+export function TrainingCards() {
     let trainingCards = cards.map((card) => {
         return <TrainingCard card={card} key={card.title}/>;
     })

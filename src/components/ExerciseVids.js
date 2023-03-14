@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './Footer.js';
 import {Link} from 'react-router-dom';
 
-export default function ExerciseVids(props) {
+export default function ExerciseVids() {
 
     return (
         <div>

@@ -8,7 +8,7 @@ const cards = [
     {img: 'light.jpeg', p: 'Dont get caught in the dark! Always bring a flashlight or headlamp.'}, {img: 'snacks.jpeg', p: 'Keep your energy up with snacks that are easy to pack and eat on the trail.'},
 ]
 
-export default function Equipment(props) {
+export default function Equipment() {
     let equipmentCards = cards.map((card, index) => {
         return <EquipmentCard card={card} key={index} />
     })
