@@ -69,7 +69,7 @@ export default function Map(props) {
       <div>
          <main>
             <h1 className="title">Trail Finder</h1>
-            <form id="map-filter" onSubmit={handleSubmit}>
+            <form className="map-filter" onSubmit={handleSubmit}>
                <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
                   <label htmlFor="max-length">Max Length (mi):</label>
                   <input type="text" id="max-length" name="max-length" placeholder="Max length (mi)..." />

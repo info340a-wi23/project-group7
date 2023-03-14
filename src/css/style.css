@@ -81,10 +81,6 @@ footer {
    background-color: rgb(170, 170, 170, 0.5)
 }
 
-#login {
-   float: right;
-}
-
 /* Home Page */
 
 .home-page .card {
@@ -230,7 +226,7 @@ a {
    margin: 0.5rem;
 }
 
-#profile-pic {
+.profile-pic {
    max-width: 20%;
    display: block;
    margin: 1rem auto;
@@ -255,20 +251,20 @@ a {
    margin-top: 0.5rem;
 }
 
-.leaflet-container, #map {
+.leaflet-container {
    position: static;
    display: block;
    margin-left: auto;
    margin-right: auto;
    margin-bottom: 1rem;
-   margin-top: 0.5rem;
+   margin-top: 1rem;
    width: 250px;
    height: 500px;
    overflow: hidden;
    z-index: 0;
 }
 
-#map-filter {
+.map-filter {
    text-align: center;
    position: static;
    display: block;
@@ -278,16 +274,16 @@ a {
    margin-bottom: 0rem;
 }
 
-#map-filter label {
+.map-filter label {
    margin-left: 0.5rem;
    margin-right: 0.5rem;
 }
 
-#map-filter input {
+.map-filter input {
    margin-right: 0.5rem;
 }
 
-#map-filter select {
+.map-filter select {
    margin-right: 1rem;
 }
 
@@ -340,13 +336,13 @@ a {
 }
 
 @media (min-width: 480px) {
-   .leaflet-container, #map {
+   .leaflet-container {
       position: static;
       display: block;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 1rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       width: 300px;
       height: 500px;
       overflow: hidden;
@@ -365,13 +361,13 @@ a {
 }
 
 @media (min-width: 580px) {
-   .leaflet-container, #map {
+   .leaflet-container {
       position: static;
       display: block;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 1rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       width: 400px;
       height: 500px;
       overflow: hidden;
@@ -380,13 +376,13 @@ a {
 }
 
 @media (min-width: 680px) {
-   .leaflet-container, #map {
+   .leaflet-container {
       position: static;
       display: block;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 1rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       width: 500px;
       height: 500px;
       overflow: hidden;
@@ -453,13 +449,13 @@ a {
       text-shadow: rgb(25, 39, 13) 1px 1px;
    }
 
-   .leaflet-container, #map {
+   .leaflet-container {
       position: static;
       display: block;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 1rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       width: 600px;
       height: 500px;
       overflow: hidden;
@@ -475,13 +471,13 @@ a {
       border-radius: 0.5rem;
    }
 
-   .leaflet-container, #map {
+   .leaflet-container {
       position: static;
       display: block;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 1rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       width: 800px;
       height: 500px;
       overflow: hidden;
