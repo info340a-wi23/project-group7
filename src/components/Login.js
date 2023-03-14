@@ -43,6 +43,8 @@ export default function Login(props) {
    setPassword('');
  }
 
+/* A log in that works includes username: (correctusername) and password: (correctPassword) */
+
   return (
       <div>
          <h1 className="title">Welcome to TrailBlazer!</h1>
