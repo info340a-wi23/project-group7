@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function UserReports(props) {
+   /*
+   Arthur - your job will be to automate the generation of these cards based on the examples provided.
+   */
    return (
       <div>
          <h2>User Reports</h2>
@@ -15,8 +18,8 @@ export default function UserReports(props) {
                               <img className="profile-pic" src="../img/blank-profile-picture.jpeg" alt="Blank profile" />
                            </div>
                            <div className="col col-9 post-info">
-                              <h5 className="card-title"><Link to="/sketchb02">@sketchb02</Link></h5>
-                              <h6 className="card-subtitle">June 26, 2022</h6>
+                              <h3 className="card-title"><Link to="/sketchb02">@sketchb02</Link></h3>
+                              <h4 className="card-subtitle">June 26, 2022</h4>
                            </div>
                         </div>
                         <img className="img-gallery" src="../img/sketchb02-pct-section-j-post.jpeg" alt="PCT Section J by sketchb02" />

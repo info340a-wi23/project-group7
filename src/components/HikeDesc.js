@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 /*
 TO DO:
-- Make hike description and photo either a database entry or a user input (keep the last two paragraph tags!)
+- Make hike description and photo either a database entry or a user input (keep the last two paragraph tags)
 */
 
 export default function HikeDesc(props) {
    return (
       <div>
          <h1 className="title">{props.data.name.split("-")[0]}</h1>
-         <p className="subtitle">{props.data.name.split("-").slice(1).join('-').trim()}</p>
+         <h2 className="subtitle">{props.data.name.split("-").slice(1).join('-').trim()}</h2>
    
          <div className="container">
             <div className="row">
@@ -44,7 +44,7 @@ export default function HikeDesc(props) {
                      </div>
                   </div>
                   <div className="col col-12 hike-description">
-                     <h5>Hike Description</h5>
+                     <h2>Hike Description</h2>
                      <p>Hike details will go here.</p>
                      <p>Check out our <Link to="/training">training page</Link> to prepare for this trail!</p>
                      <p>Pass required: {props.data.requiredPass}</p>
