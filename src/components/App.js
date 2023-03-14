@@ -9,6 +9,7 @@ import NotFound from './NotFound.js';
 import Nav from './Nav.js';
 import BeginnerPage from './Beginner.js';
 import ExerciseVids from './ExerciseVids.js';
+import Equipment from './Equipment.js';
 
 function getDiffCat(diff) {
    if (diff <= 0.005) {
@@ -59,6 +60,7 @@ export default function App() {
             <Route path={'/training'} element={<Training />} />
             <Route path={'/beginner'} element={<BeginnerPage />} />
             <Route path={'/exercise'} element={<ExerciseVids />} />
+            <Route path={'/equipment'} element={<Equipment />} />
             <Route path={'/login'} element={<Login loggedIn={setIsLoggedIn}/>} />
             {itemsWithDifficulties.map(item => (
                <Route key={item.index} path={`/map/${item.url.split("/")[item.url.split("/").length - 1]}`} element={<Hike data={item} loggedIn={isLoggedIn} />} />

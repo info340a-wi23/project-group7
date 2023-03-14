@@ -44,7 +44,7 @@ export default function ExerciseVids(props) {
                             </ol>
                         </div>
                         <div className="col-md-7 text-center">
-                            <Link className="btn btn-success" to={"*"}>Watch example</Link>
+                            <Link className="btn btn-success" to={"*"}>Watch An Example</Link>
                             <p></p>
                         </div> 
                     </div>
@@ -67,7 +67,7 @@ export default function ExerciseVids(props) {
                             </ol>
                         </div>
                         <div className="col-md-7 text-center">
-                            <Link className="btn btn-success" to={"*"}>Watch example</Link>
+                            <Link className="btn btn-success" to={"*"}>Watch An Example</Link>
                         </div>
                     </div>
                 </div>

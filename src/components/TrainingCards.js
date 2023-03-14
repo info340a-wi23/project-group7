@@ -15,7 +15,7 @@ const cards = [
     {
         title: 'Equipment Guide',
         img: 'equipment.jpeg',
-        link: '*'
+        link: 'equipment'
     }
 ];
 
