@@ -17,7 +17,7 @@ export default function Equipment(props) {
         <div>
             <h1 className="title">Essential Hiking Equipment Guide</h1>
             <main>
-                <h5>Here are some of the most <i>ESSENTIAL</i> items to bring on your hiking trip!</h5>
+                <h5>Here are some of the most <em>ESSENTIAL</em> items to bring on your hiking trip!</h5>
                 <div className="d-flex">
                     <ul className=" mx-auto justify-content-center">
                         <li>Hiking boots</li>

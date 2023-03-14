@@ -12,7 +12,7 @@ export default function ExerciseVids(props) {
                         <img className="img-fluid rounded" src="img/exercise_main.jpeg" alt="Exercising"></img>
                     </div>
                     <h1>Try These Training Exercise Variations!</h1>
-                    <h4><i>Hiking isn’t just walking in the woods. It requires strength and balance. Here’s how to get ready for trekking, from easy day hikes to the longest thru-hikes in the world.</i></h4>
+                    <h4><em>Hiking isn’t just walking in the woods. It requires strength and balance. Here’s how to get ready for trekking, from easy day hikes to the longest thru-hikes in the world.</em></h4>
                     <h5>Keep the following in mind as you train:</h5>
                     <ul>
                         <li>If something hurts, modify the exercise or skip it; and take extra rest days if you feel the need</li>
@@ -53,7 +53,7 @@ export default function ExerciseVids(props) {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-7 text-center">
-                            <img className="img-fluid rounded" src="img/stepup.jpeg" alt="jump" />
+                            <img className="img-fluid rounded" src="img/stepup.jpeg" alt="stepup" />
                             <h4>Step Ups</h4>
                             <p>Hiking with a pack on involves a seemingly endless amount of stepping up and over things. This exercise builds strength and endurance in your glutes and quad muscles so you can handle whatever obstacles you’ll encounter along the trail.</p>
                             <p><b>Props: A stable surface, about 8 inches off the ground.</b></p>
