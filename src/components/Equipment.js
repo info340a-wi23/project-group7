@@ -2,10 +2,10 @@ import React from 'react';
 import Footer from './Footer.js';
 
 const cards = [
-    {img: '', p: 'Hiking boots are crucial for comfort and stability on the trail.'}, {img: '', p: 'A reliable backpack is crucial for carrying all of your gear and supplies.'}, 
-    {img: '', p: 'Staying hydrated is key on a hiking trip, so bring a water bottle!'}, {img: '', p: 'Dont rely on technology alone! Always bring a map and compass as backup.'},
-    {img: '', p: 'Protect yourself from the sun with sunscreen and a hat.'}, {img: '', p: 'Be prepared for emergencies with a well-stocked first aid kit.'}, 
-    {img: '', p: 'Dont get caught in the dark! Always bring a flashlight or headlamp.'}, {img: '', p: 'Keep your energy up with snacks and meals that are easy to pack and eat on the trail.'},
+    {img: 'boots.jpeg', p: 'Hiking boots are crucial for comfort and stability on the trail.'}, {img: 'backpack.jpeg', p: 'A reliable backpack is crucial for carrying all of your gear and supplies.'}, 
+    {img: 'bottle.jpeg', p: 'Staying hydrated is key on a hiking trip, so bring a water bottle!'}, {img: 'compass.jpeg', p: 'Dont rely on technology alone! Always bring a map and compass as backup.'},
+    {img: 'hat.jpeg', p: 'Protect yourself from the sun with sunscreen and a hat.'}, {img: 'aid.jpeg', p: 'Be prepared for emergencies with a well-stocked first aid kit.'}, 
+    {img: 'light.jpeg', p: 'Dont get caught in the dark! Always bring a flashlight or headlamp.'}, {img: 'snacks.jpeg', p: 'Keep your energy up with snacks and meals that are easy to pack and eat on the trail.'},
 ]
 
 export default function Equipment(props) {
@@ -41,8 +41,13 @@ function EquipmentCard(props) {
     let card = props.card;
 
     return (
-        <div className="col-sm-6">
-            <p>{card.p}</p>
+        <div className="col-4 flex-grow-1">
+            <div className="card mb-3">
+                <img className="card-img-top" src={'img/' + card.img} alt={props.index} />
+                <div className="card-body">
+                    <p>{card.p}</p>
+                </div>
+            </div>
         </div>
     )
 }
