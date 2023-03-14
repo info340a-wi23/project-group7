@@ -1,71 +1,52 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+const cards = [
+    {
+        title: 'Training Programs',
+        img: 'hiking.jpeg',
+        link: 'beginner'
+    },
+    {
+        title: 'Exercise Videos',
+        img: 'training.jpeg',
+        link: 'beginner'
+    },
+    {
+        title: 'Equipment Guide',
+        img: 'equipment.jpeg',
+        link: 'beginner'
+    }
+];
+
 export function TrainingCards(props) {
+    let trainingCards = cards.map((card) => {
+        return <TrainingCard card={card} key={card.title}/>;
+    })
 
     return (
-        <div className="container">
-            <div className="row mx-auto">
-                <div className="col-md-6 col-xl-3 d-flex mx-auto">
-                    <div className="card mb-4">
-                        <div className="card-body">
-                            <div class="row">
-                                <div className="col-sm-auto col-xl-12">
-                                    <img className="pb-3 mx-auto d-block" src="img/hiking.jpeg" alt="hiking"></img>
-                                </div>
-                                <div className="col-sm">
-                                    <h2 className="card-title">Training Programs</h2>
-                                    <div className="col text-center">
-                                        <Link className="btn btn-dark" to="/beginner">Learn More</Link>
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="row mx-auto">
-                <div className="col-md-6 col-xl-3 d-flex mx-auto">
-                    <div className="card mb-4">
-                        <div className="card-body">
-                            <div class="row">
-                                <div className="col-sm-auto col-xl-12">
-                                    <img className="pb-3 mx-auto d-block" src="img/training.jpeg" alt="training"></img>
-                                </div>
-                                <div className="col-sm">
-                                    <h2 className="card-title">Exercise Videos</h2>
-                                    <div className="col text-center">
-                                        <Link className="btn btn-dark" to="/beginner">Learn More</Link>
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="row mx-auto">
-                <div className="col-md-6 col-xl-3 d-flex mx-auto">
-                    <div className="card mb-4">
-                        <div className="card-body">
-                            <div class="row">
-                                <div className="col-sm-auto col-xl-12">
-                                    <img className="pb-3 mx-auto d-block" src="img/equipment.jpeg" alt="equipment"></img>
-                                </div>
-                                <div className="col-sm">
-                                    <h2 className="card-title">Equipment Guide</h2>
-                                    <div className="col text-center">
-                                        <Link className="btn btn-dark" to="/beginner">Learn More</Link>
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div>
+            <div className="row">
+                {trainingCards}
             </div>
         </div>
-        
-    )
+    );
+}
 
+function TrainingCard(props) {
+    let card = props.card;
+
+    return (
+    <div className="col-4 flex-grow-1">
+      <div className="card mb-3">
+        <img className="card-img-top" src={'img/' + card.img} alt={card.title} />
+        <div className="card-body">
+            <h3 className="card-title">{card.title}</h3>
+            <div className="col text-center">
+                <Link className="btn btn-success" to={"/" + card.link}>Learn More</Link>
+            </div>
+        </div>
+      </div>
+    </div>
+    )
 }
