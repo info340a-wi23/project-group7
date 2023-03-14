@@ -58,20 +58,22 @@ export default function Login(props) {
                </div> :
                <div>
                   <h5>Join our hiking community by logging in!</h5>
-                  <form id="map-filter" onSubmit={handleSubmit}>
-                     <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
-                        <label>Username: </label>
-                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                     </div>
+                  <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                     <form id="login" onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                        <div style={{ display: "block", marginTop: "0.5rem" }}>
+                           <label style={{ marginRight: "0.5rem" }}>Username: </label>
+                           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                        </div>
 
-                     <div style={{ display: "inline-block", marginTop: "0.5rem" }}>
-                        <label>Password: </label>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                     </div>
+                        <div style={{ display: "block", marginTop: "0.5rem" }}>
+                           <label style={{ marginRight: "0.5rem" }}>Password: </label>
+                           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                        </div>
 
-                     <button type="submit" className="btn btn-success">Log In</button>
-                     {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
-                  </form>
+                        <button type="submit" className="btn btn-success" style={{ marginTop: "0.5rem" }}>Log In</button>
+                        {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
+                     </form>
+                  </div>
                </div>
             }
          
